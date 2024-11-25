@@ -27,7 +27,7 @@ public class LoginSystemService {
     private String secret_key;
 
     @Autowired
-    private Users_LoginRepository usersLoginRepository;
+    private UserRepository userRepository;
 
     /**
      * Default constructor for the LoginSystemService class.
@@ -42,8 +42,12 @@ public class LoginSystemService {
      * @param username The username of the user to find.
      * @return The Users_Login entity corresponding to the given username, or null if not found.
      */
-    public Users_Login findByUsername(String username) {
-        return usersLoginRepository.findByUsername(username);
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    public Long getCount(){
+        return userRepository.count();
     }
 
     /**
@@ -93,8 +97,8 @@ public class LoginSystemService {
      * @param salt            The salt used for hashing the password.
      * @return A Users_Login object containing the user details.
      */
-    public Users_Login generateUsersLogin(String username, String hashed_password, String salt) {
-        return new Users_Login((int) usersLoginRepository.count() + 1, username, hashed_password, salt, LocalDateTime.now());
+    public User generateUsersLogin(String username, String email, String hashed_password, String salt) {
+        return new User((int) userRepository.count() + 1, username, hashed_password, salt, LocalDateTime.now(), "user", email);
     }
 
     /**
@@ -103,8 +107,8 @@ public class LoginSystemService {
      * @param users_login The Users_Login object to save.
      * @return The saved Users_Login object.
      */
-    public Users_Login insertUsersLogin(Users_Login users_login) {
-        return usersLoginRepository.save(users_login);
+    public User insertUsersLogin(User users_login) {
+        return userRepository.save(users_login);
     }
 
     /**

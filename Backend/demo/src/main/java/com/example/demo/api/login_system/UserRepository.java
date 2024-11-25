@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
  * Repository defines ORM methods to interact with database.
  */
 @Repository
-public interface Users_LoginRepository extends JpaRepository<Users_Login, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-    Users_Login findByUsername(String username);
+    User findByUsername(String username);
 
     // Additional query methods can be defined here
 }

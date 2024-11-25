@@ -2,6 +2,7 @@ package com.example.demo.api.login_system;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,19 +30,23 @@ public class LoginSystemController {
      *
      * @param username The username for the new account.
      * @param password The password for the new account.
-     * @return A {@link Users_Login} object representing the newly created user, or null if the username is already taken.
+     * @return A {@link Users_Login} object representing the newly created user,
+     * or null if the username is already taken.
      * @throws Exception If an error occurs during password hashing.
      */
     @GetMapping("/register")
-    public Users_Login createAccount(String username, String password) throws Exception {
+    public User createAccount(
+            @RequestParam(required = true) String username,
+            @RequestParam(required = true) String password,
+            @RequestParam(required = true) String email
+    ) throws Exception {
         if (usersLoginService.findByUsername(username) != null) {
             return null; //Username already taken
         }
         String new_salt = usersLoginService.generateSalt();
 
         String hashed_password = usersLoginService.hashPassword(password, new_salt);
-        // return usersLoginService.generateUsersLogin(username, hashed_password, new_salt);
-        return usersLoginService.insertUsersLogin(usersLoginService.generateUsersLogin(username, hashed_password, new_salt));
+        return usersLoginService.insertUsersLogin(usersLoginService.generateUsersLogin(username, email, hashed_password, new_salt));
     }
 
     /**
@@ -49,12 +54,16 @@ public class LoginSystemController {
      *
      * @param username The username of the user trying to log in.
      * @param password The password of the user trying to log in.
-     * @return A string indicating the result of the login attempt ("Login Successful", "Username not found", or "Password incorrect").
+     * @return A string indicating the result of the login attempt ("Login
+     * Successful", "Username not found", or "Password incorrect").
      * @throws Exception If an error occurs during password hashing.
      */
     @GetMapping("/login")
-    public String login(String username, String password) throws Exception {
-        Users_Login account = usersLoginService.findByUsername(username);
+    public String login(
+            @RequestParam(required = true) String username,
+            @RequestParam(required = true) String password
+    ) throws Exception {
+        User account = usersLoginService.findByUsername(username);
         if (account == null) {
             return "Username not found"; //Username already taken
         }
@@ -66,5 +75,10 @@ public class LoginSystemController {
         } else {
             return "Password incorrect";
         }
+    }
+
+    @GetMapping("/test")
+    public Long getCount() {
+        return usersLoginService.getCount();
     }
 }

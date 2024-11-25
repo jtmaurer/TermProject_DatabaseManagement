@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
  * This class is mapped to the "users_login" table in the database and stores user credentials.
  */
 @Entity
-@Table(name = "users_login")
-public class Users_Login {
+@Table(name = "User")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +24,12 @@ public class Users_Login {
 
     @Column(name = "username", nullable = false, unique = true, length = 50)
     private String username;
+
+    @Column(name = "email")
+    private String email;
+    
+    @Column(name = "role")
+    private String role;
 
     @Column(name = "hashed_password", nullable = false, length = 255)
     private String hashed_password;
@@ -37,7 +43,7 @@ public class Users_Login {
     /**
      * Default constructor required for JPA entity instantiation.
      */
-    public Users_Login(){
+    public User(){
     }
 
     /**
@@ -48,12 +54,14 @@ public class Users_Login {
      * @param salt
      * @param createdAt
      */
-    public Users_Login(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt){
+    public User(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt, String role, String email){
         this.userId = userId;
         this.username = username;
         this.hashed_password = hashed_password;
         this.salt = salt;
         this.createdAt = createdAt;
+        this.role = role;
+        this.email = email;
     }
 
     // Getters and setters
