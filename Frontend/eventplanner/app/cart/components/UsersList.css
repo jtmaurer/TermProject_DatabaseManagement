@@ -1,0 +1,77 @@
+.cusers {
+    display: grid;
+    background-color: white;
+    
+  }
+  
+  .cusers ul {
+    list-style: none;
+    padding: 1rem;
+   
+  }
+  
+  .cusers li {
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  .crealz li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .crealz {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .ccart-total {
+    display: flex;
+    margin-top: -8px;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px;
+    border-color: orange;
+
+  }
+
+  .ccart-total button {
+    margin-left: 20px;
+  }
+
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 425px; /* Set the maximum height for the cart */
+    overflow-y: auto; /* Enable vertical scrolling */
+   
+    border-radius: 5px;
+    padding: 10px;
+  
+  
+  }
+
+ 
+
+  .cbackground {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 440px;
+    background-color: lightgray;
+    border-radius: 5%;
+    
+    
+  
+
+  }
+
+  .cen {
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 5%;
+  }
+  
+  
