@@ -1,0 +1,83 @@
+
+.hero {
+    position: relative;
+    text-align: center;
+    background-color: #f8f8fa;
+  }
+  
+  .hero-image {
+    width: 1800px;
+    height: 950px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .search-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: #0f107a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 1500px;
+    height: 100px;
+    
+    
+  }
+  
+  .search-bar select {
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 400px;
+    border: 0;
+    background-color: #f0f1f5;
+  }
+
+ 
+
+  .search-bar button{
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 80px;
+    background-color: #7848f4;
+    margin-left: 20px;
+  }
+
+  .search-bar img {
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: px;
+    
+  }
+
+  .heroholder {
+    margin-left: auto;
+    display: flex;
+    margin-right: auto;
+  }
+
+  .selecter {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 15px;
+    
+  }
+
+  .selecter label {
+    text-align: left;
+    margin-left: 20px;
+    
+  }
+
+
+  

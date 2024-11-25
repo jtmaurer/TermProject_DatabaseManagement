@@ -1,0 +1,17 @@
+footer {
+    background: #7848f2;
+    color: white;
+    height: 200px;
+    width: 2033px;
+    margin-left: -10px;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  
+  .cta button {
+    background-color: white;
+    color: #7848f2;
+    border: none;
+    border-radius: 5px;
+  }
+  
