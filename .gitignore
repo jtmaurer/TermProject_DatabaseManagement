@@ -6,6 +6,7 @@ node_modules/
 .pnp.js
 .next/
 
+Frontend/eventplanner/.next/
 # testing
 /coverage
 

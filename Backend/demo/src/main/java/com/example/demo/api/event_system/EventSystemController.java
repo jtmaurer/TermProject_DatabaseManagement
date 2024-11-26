@@ -27,10 +27,10 @@ public class EventSystemController {
             @RequestParam(required = true) Boolean user_ordered_events,
             @RequestParam(required = false) Integer user_id,
             @RequestParam(required = false) String location,
-            @RequestParam(required = false) String date,
+            @RequestParam(required = false) String event_date,
             @RequestParam(required = false) Double price
     ) {
-        return eventSystemService.getEvents(location, date, price, user_id, user_ordered_events);
+        return eventSystemService.getEvents(location, event_date, price, user_id, user_ordered_events);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
