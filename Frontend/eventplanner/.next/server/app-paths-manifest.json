@@ -1,6 +1,3 @@
 {
-  "/AddEvent/page": "app/AddEvent/page.js",
-  "/MyEvent/page": "app/MyEvent/page.js",
-  "/page": "app/page.js",
   "/allEvents/page": "app/allEvents/page.js"
 }

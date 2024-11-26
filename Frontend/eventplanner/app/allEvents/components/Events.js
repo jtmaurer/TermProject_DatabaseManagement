@@ -6,6 +6,11 @@ import AddUser from '../../component/AddUser';
 import './Events.css';
 
 const Events = () => {
+  const events = new Array(6).fill({
+    title: 'BestSeller Book Bootcamp',
+    location: 'Online Event',
+    time: 'March 30 | 9:00 AM',
+  });
 
   const [event, setEvent] = useState([]);
   const [visible, setVisible] = useState(false);
@@ -20,39 +25,6 @@ const Events = () => {
     setEvent((prevEvent) => prevEvent.filter(event => event.id !== id));
     
   };
-
-  const fetchEvents = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/events?user_ordered_events=false');
-      if (!response.ok) {
-        throw new Error('Failed to fetch events');
-      }
-      const data = await response.json();
-  
-      // Map backend fields to frontend fields
-      const updatedData = data.map((item, index) => ({
-        id: item.event_id, // Backend field mapped to frontend id
-        Eventname: item.event_name, // Map backend field to frontend field
-        description: item.description,
-        date: item.event_date,
-        startTime: item.start_time,
-        endTime: item.end_time,
-        eventImg: item.event_img,
-        Online: item.is_online,
-        venueID: item.venue_id,
-      }));
-      setEvent(updatedData);
-    } catch (error) {
-      console.error('Error fetching events:', error);
-    }
-  };
-  
-
-  // Fetch events on mount
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
 
   return (
     <div className="events">

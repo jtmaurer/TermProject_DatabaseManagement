@@ -18,9 +18,10 @@ const Home = () => {
   return (
     <div>
       <Hdr />
-      <Hero2 />
-      <Events />
-     
+      {/* <Hero2 /> */}
+      {/* <Events /> */}
+      Events For You
+      <EventList />
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@
 import './page.css';
 import React, { useEffect, useState } from 'react';
 import Model from 'react-modal';
-import AddUser from '../component/AddUser';
+import AddUser from '../MyEvent/components/AddUser';
 import { useRouter } from 'next/navigation';
 import Footer from '../component/components/Footer';
 import Hdr from '../component/Hdr2';

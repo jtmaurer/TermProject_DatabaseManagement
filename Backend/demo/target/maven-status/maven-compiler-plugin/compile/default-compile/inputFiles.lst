@@ -12,10 +12,8 @@ C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\event_system\relevant_repositories\PaymentRepository.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\event_system\relevant_repositories\TicketRepository.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\event_system\relevant_repositories\VenueRepository.java
-C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\JwtAuthorizationFilter.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\LoginSystemController.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\LoginSystemService.java
-C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\SecurityConfig.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\User.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\api\login_system\UserRepository.java
 C:\Users\starv\Desktop\Test\TermProject_DatabaseManagement\Backend\demo\src\main\java\com\example\demo\EventPlannerApplication.java

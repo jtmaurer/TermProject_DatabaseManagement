@@ -2,39 +2,14 @@
 import './page.css';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const [error, setError] = useState(null);
 
   const router = useRouter();
-
-   const handleSignup = async () => {
-    if (password !== password2) {
-      setError('Passwords do not match');
-      return;
-    }
-
-    try {
-      const response = await axios.post('http://localhost:8080/register', {
-        username,
-        password,
-        email,
-      });
-      if (response.data) {
-        alert('Signup successful!');
-        router.push('/login');
-      } else {
-        setError('Username already exists');
-      }
-    } catch (err) {
-      setError('An error occurred. Please try again.');
-    }
-  };
 
   return (
     <div className="signstuff">

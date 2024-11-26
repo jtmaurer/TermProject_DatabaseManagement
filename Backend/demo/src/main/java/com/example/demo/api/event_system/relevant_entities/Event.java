@@ -3,8 +3,19 @@ package com.example.demo.api.event_system.relevant_entities;
 import java.sql.Date;
 import java.sql.Time;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+/**
+ * Entity class representing a user login in the system.
+ * This class is mapped to the "users_login" table in the database and stores user credentials.
+ */
 @Entity
 @Table(name = "Event")
 public class Event {
@@ -12,119 +23,44 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
-    private Integer id; // Matches `id` in frontend
+    private Integer event_id;
 
-    @Column(name = "event_name")
-    private String eventname; // Matches `Eventname` in frontend
+    @Column(name = "event_name") 
+    private String event_name;
 
     @Column(name = "event_date")
-    private Date date; // Matches `date` in frontend
+    private Date event_date;
 
     @Column(name = "start_time")
-    private Time startTime; // Matches `startTime` in frontend
+    private Time start_time;
 
     @Column(name = "end_time")
-    private Time endTime; // Matches `endTime` in frontend
+    private Time end_time;
 
-    @Column(name = "description")
-    private String description; // Matches `description` in frontend
+    @Column(name = "description") 
+    private String description;
 
-    @Column(name = "event_img")
-    private String eventImg; // Matches `eventImg` in frontend
-
-    @Column(name = "is_online")
-    private Boolean online; // Matches `Online` in frontend
+    @Column(name = "price")
+    private Double price;
 
     @ManyToOne
     @JoinColumn(name = "venue_id", referencedColumnName = "venue_id")
-    private Venue venueID; // Matches `venueID` in frontend
+    private Venue venue_id; // Link to the Venue entity
 
-    public Event() {}
+    /**
+     * Default constructor required for JPA entity instantiation.
+     */
+    public Event(){
+    }
 
-    public Event(Integer id, String eventname, Date date, Time startTime, Time endTime,
-                 String description, String eventImg, Boolean online, Venue venueID) {
-        this.id = id;
-        this.eventname = eventname;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public Event(Integer event_id, String event_name, Date event_date, Time start_time, Time end_time, String description, Double price, Venue venue_id){
+        this.event_id = event_id;
+        this.event_name = event_name;
+        this.event_date = event_date;
+        this.start_time = start_time;
+        this.end_time = end_time;
         this.description = description;
-        this.eventImg = eventImg;
-        this.online = online;
-        this.venueID = venueID;
-    }
-
-    // Getters and Setters for all fields
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getEventname() {
-        return eventname;
-    }
-
-    public void setEventname(String eventname) {
-        this.eventname = eventname;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Time getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
-    }
-
-    public Time getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getEventImg() {
-        return eventImg;
-    }
-
-    public void setEventImg(String eventImg) {
-        this.eventImg = eventImg;
-    }
-
-    public Boolean getOnline() {
-        return online;
-    }
-
-    public void setOnline(Boolean online) {
-        this.online = online;
-    }
-
-    public Venue getVenueID() {
-        return venueID;
-    }
-
-    public void setVenueID(Venue venueID) {
-        this.venueID = venueID;
+        this.price = price;
+        this.venue_id = venue_id;
     }
 }

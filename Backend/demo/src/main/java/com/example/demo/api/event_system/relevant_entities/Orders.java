@@ -32,9 +32,11 @@ public class Orders {
     @Column(name = "number_of_tickets")
     private Integer number_of_tickets;
     
-    @ManyToOne
+     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user_id;
+
+
 
     @ManyToOne
     @JoinColumn(name = "event_id", referencedColumnName = "event_id")
