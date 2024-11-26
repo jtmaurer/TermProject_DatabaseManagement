@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 body {
@@ -353,6 +354,362 @@ hr {
 
 
 
+=======
+
+
+body {
+    background-color: #343434;
+    filter: brightness(100%);
+    color: black;
+}
+
+.aboutpager {
+    display: flex;
+    
+ 
+    margin: 1%;
+    border-radius: 25px;
+    
+}
+
+.aboutDescription2 {
+    width: 100%;
+
+}
+
+.aboutDescription2 h1 {
+    font-size: 20px;
+    margin-top: 15px;
+    background-color: #db9422;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: auto;
+
+}
+
+.aboutDescription2 p {
+    
+    font-size: 16px;
+
+}
+
+.metext2 {
+    border-color: #A38560;
+    width: 80%;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    height: 470px;
+}
+
+.metext2 p {
+    margin-top: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.aboutfaq2 {
+    width: 50%;
+}
+
+.aboutfaq2 p {
+    font-size: 12px;
+}
+
+.aboutfaq2 h2 {
+    font-size: 14px;
+}
+
+.aboutfaq2 h1 {
+    font-size: 20px;
+    margin-top: 15px;
+    width: 200px;
+    background-color: #db9422;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+
+
+
+.aboutfirst {
+    background-color: #F6EDE2;
+    height: 645px;
+    width: 13%;
+    text-align: center;
+    border-radius: 25px;
+    
+
+}
+
+.aboutfirst button:hover {
+    background-color: gray;
+    width: 120px;
+    border-radius: 15px;
+}
+
+.aboutfirst button:active {
+    background-color: lightgray;
+   
+}
+
+.aboutfirst img{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutmiddlez {
+    background-color: #A8C3C9;
+    height: 640px;
+    width: 86.2%;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+.aboutlast {
+    background-color: #fbf2f2;
+    ;
+    height: 1025px;
+    width: 13%;
+    text-align: center;
+    border-radius: 25px;
+    margin: .5%;
+    
+}
+
+
+
+.aboutmiddle11 {
+    
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+
+    margin-top: 10px;
+    
+ 
+}
+
+
+
+.aboutmiddle33 p {
+    padding-top: 10px;
+}
+
+.aboutmiddle22 {
+    
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin: 1%;
+    margin-left: 10px;
+    
+ 
+}
+
+.aboutsort {
+    margin-left: 1%;
+    background-color: #fbf2f2;
+    width: 5%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
+
+img {
+    height: 17%;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 20%;
+    border-radius: 100px;
+    margin-bottom: 5%;
+
+}
+
+
+
+hr {
+    border-color: black;
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 40%;
+}
+
+.aboutdir {
+    margin: 5%;
+}
+
+.aboutname {
+    font-size: 30px;
+}
+
+
+
+.aboutdateorg {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 100px;
+    margin-right: 0;
+}
+
+.aboutupcoming {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5px;
+}
+
+.aboutdateorg1 {
+    background-color: rgba(217,217,217,255);
+    text-align: center;
+    width: 170px;
+    margin-left: 3px;
+    margin-top: 5px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.aboutapex {
+    display: flex;
+    justify-content: center;
+}
+
+.aboutlol {
+    background-color: #000000;
+    width: 1px;
+}
+
+.aboutreal {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+ 
+}
+
+.aboutformz {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutlexz {
+    display: flex;
+    justify-content: right;
+    
+}
+
+.aboutlex2z {
+    margin-top: 35px;
+    margin-right: 40px;
+    font-size: 30px;
+    position: absolute;
+    color: white;
+}
+
+.aboutrealz {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+ 
+}
+
+.aboutbordss {
+    
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;
+    
+   
+    
+    
+    
+    
+}
+
+.aboutbords11 {
+    
+    font-size: 40px;
+    height: fit-content;
+    padding-top: 12.5px;
+}
+
+.aboutbords22 {
+    width: 160px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+}
+
+.aboutForm {
+    
+    height: fit-content;
+    width: fit-content;
+   
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.aboutForm label {
+    font-size: 50px;
+    
+}
+
+.aboutFormUsername {
+    padding-top: 70px;
+}
+
+.aboutForm input {
+    width: 800px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.aboutForm button {
+    font-size: 50px;
+    width: 300px;
+    height: 80px;
+    margin-top: 20px;
+    background-color: #4c7253;
+}
+
+.aboutForm button:hover {
+    background-color: #1c2c1f;
+}
+
+.aboutForm button:active {
+    background-color: white;
+}
+
+
+
+
+
+
+>>>>>>> Thomas-branch
 =======
 
 

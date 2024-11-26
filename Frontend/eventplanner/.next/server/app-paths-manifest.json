@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {}
 =======
+=======
+>>>>>>> Thomas-branch
 =======
 >>>>>>> Thomas-branch
 {
@@ -9,8 +12,12 @@
   "/allEvents/page": "app/allEvents/page.js",
   "/page": "app/page.js"
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> thomas-branch
+=======
+}
+>>>>>>> Thomas-branch
 =======
 }
 >>>>>>> Thomas-branch
