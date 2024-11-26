@@ -1,5 +1,8 @@
 package com.example.demo.api.event_system;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,15 +17,20 @@ import com.example.demo.api.event_system.relevant_entities.OrderTicketList;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketModelSolo;
 import com.example.demo.api.event_system.relevant_entities.Orders;
 import com.example.demo.api.event_system.relevant_entities.Ticket;
+import com.example.demo.api.event_system.relevant_entities.Venue;
 import com.example.demo.api.event_system.relevant_repositories.EventRepository;
 import com.example.demo.api.event_system.relevant_repositories.OrdersRepository;
 import com.example.demo.api.event_system.relevant_repositories.TicketRepository;
+import com.example.demo.api.event_system.relevant_repositories.VenueRepository;
 import com.example.demo.api.login_system.User;
 import com.example.demo.api.login_system.UserRepository;
 
 @Service
 public class EventSystemService {
 
+    
+    @Autowired
+    private VenueRepository venueRepository;
     @Autowired
     private EventRepository eventRepository;
     @Autowired
@@ -98,5 +106,28 @@ public class EventSystemService {
         // Return the constructed OrderTicketModel
         return orderTicketModelSolo;
     }
+
+    // public void insertVenue() throws IOException {
+    //     String imagePath = "../Venue_Images/columbus_civic_center.jpg";
+    //     System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
+    //     System.out.println("**********************************************************************");
+
+    //     Venue venue = new Venue();
+    //     venue.setVenue_name("Columbus Civic Center");
+    //     venue.set_location("Columbus, GA");
+    //     venue.set_capacity(10600);
+    //     venue.set_venue_id(5);
+
+    //     // Read the image file into a byte array
+    //     byte[] imageBytes = Files.readAllBytes(Path.of(imagePath));
+    //     Byte[] boxedBytes = new Byte[imageBytes.length];
+    //     for (int i = 0; i < imageBytes.length; i++) {
+    //         boxedBytes[i] = imageBytes[i];
+    //     }
+    //     venue.set_image(boxedBytes);
+
+    //     // Save the venue to the database (assuming venueRepository exists)
+    //     venueRepository.save(venue);
+    // }
 
 }

@@ -29,16 +29,40 @@ public class Venue {
     @Column(name = "capacity")
     private Integer capacity;
 
+    @Column(name = "image", columnDefinition = "LONGBLOB") // Storing the image in binary format
+    private Byte[] image;
+
     /**
      * Default constructor required for JPA entity instantiation.
      */
     public Venue(){
     }
 
-    public Venue(Integer venue_id, String venue_name, String location, Integer capacity){
+    public Venue(Integer venue_id, String venue_name, String location, Integer capacity, Byte[] image){
         this.venue_id = venue_id;
         this.venue_name = venue_name;
         this.location = location;
         this.capacity = capacity;
+        this.image = image;
+    }
+
+    public void setVenue_name(String venue_name){
+        this.venue_name=venue_name;
+    }
+
+    public void set_location(String location){
+        this.location = location;
+    }
+
+    public void set_capacity(Integer capacity){
+        this.capacity = capacity;
+    }
+
+    public void set_image(Byte[] image){
+        this.image = image;
+    }
+
+    public void set_venue_id(Integer venue_id){
+        this.venue_id = venue_id;
     }
 }

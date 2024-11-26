@@ -21,7 +21,6 @@ const Events = () => {
 
   };
 
-
   const handleDelete = id => {
     setEvent((prevEvent) => prevEvent.filter(event => event.id !== id));
     
