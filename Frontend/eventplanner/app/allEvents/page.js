@@ -5,6 +5,7 @@ import './page.css';
 import { useRouter } from 'next/navigation';
 import Hero2 from './components/Hero';
 import Events from './components/Events';
+import EventList from '../component/event_specific_components/EventList';
 import Footer from '../component/components/Footer';
 import Hdr from '../component/Hdr2';
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Hdr />
       <Hero2 />
       <Events />
+     
       <Footer />
     </div>
   );

@@ -3,8 +3,8 @@
 import './page.css';
 import React, { useEffect, useState } from 'react';
 import Model from 'react-modal';
-import UsersList from './components/UsersList';
-import AddUser from './components/AddUser';
+import UsersList from '../component/UsersList';
+import AddUser from '../component/AddUser';
 import { useRouter } from 'next/navigation';
 import Footer from '../component/components/Footer';
 import Hdr from '../component/Hdr2';
@@ -15,7 +15,7 @@ const Home = () => {
   const [event, setEvent] = useState([]);
   const [visible, setVisible] = useState(false);
   const [filter, setFilter] = useState('All');
-
+ 
   const router = useRouter();
   
   const handleAddEvent = (newEvent) => {

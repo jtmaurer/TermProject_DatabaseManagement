@@ -7,7 +7,7 @@ const Hero = () => {
       <div className='imghold2'>
         <img
           className="all-image"
-          src="daw"
+          src="https://www.shutterstock.com/image-photo/crowded-concert-hall-scene-stage-600nw-2137587951.jpg"
           alt="Event img"
         />
       </div>

@@ -4,24 +4,27 @@ import Card from './Card';
 import './UsersList.css';
 
 const UsersList = ({ users, onDelete }) => {
+  console.log(users);
   return (
     <Card>
       <ul className="realz">
-        {users.map((user, index) => (
+        {users.map((user) => (
           <User
-          key={user.id} 
-          id={user.id} 
-          Eventname={user.Eventname}
-          description={user.description}
-          date={user.date}
-          startTime={user.startTime}
-          endTime={user.endTime}
-          eventImg={user.eventImg}
-          Online={user.Online}
-          onDelete={onDelete}
+            key={user.id} // This ensures React can uniquely identify each child
+            id={user.id}
+            Eventname={user.Eventname}
+            description={user.description}
+            date={user.date}
+            venueID={user.venueID}
+            startTime={user.startTime}
+            endTime={user.endTime}
+            eventImg={user.eventImg}
+            Online={user.Online}
+            onDelete={onDelete}
           />
         ))}
       </ul>
+
     </Card>
   );
 };

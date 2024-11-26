@@ -9,14 +9,17 @@ const AddUser = ({ onAddUser }) => {
   const [endTime, setEndTime] = useState('');
   const [description, setDescription] = useState('');
   const [eventImg, seteventImg] = useState('');
+  const [venueID, setvenueID] = useState('');
   const [Online, setOnline] = useState('');
   const [date, setDate] = useState('');
+
+  
 
   const handleSubmit = (eventz) => {
     eventz.preventDefault();
   
    
-    if (!Eventname || !description || !date || !endTime || !startTime || !eventImg) return;
+    if (!Eventname || !description || !date || !endTime || !startTime || !eventImg || !venueID) return;
   
     
     const newEvent = {
@@ -28,6 +31,7 @@ const AddUser = ({ onAddUser }) => {
       startTime,
       eventImg,
       Online,
+      venueID,
     };
   
     onAddUser(newEvent); 
@@ -39,6 +43,7 @@ const AddUser = ({ onAddUser }) => {
     setEndTime('');
     setStartTime('');
     seteventImg('');
+    setvenueID('');
     setOnline(false);
   };
   
@@ -58,6 +63,16 @@ const AddUser = ({ onAddUser }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+        <label>Venue ID:</label>
+        <select
+          value={venueID}
+          onChange={(e) => setvenueID(e.target.value)}
+        >
+          <option value="">Select Venue</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
         <label>Date:</label>
         <input
           type="date"
