@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 {}
+=======
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/allEvents/page": "app/allEvents/page.js",
+  "/page": "app/page.js"
+}
+>>>>>>> thomas-branch

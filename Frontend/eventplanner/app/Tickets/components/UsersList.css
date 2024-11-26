@@ -1,0 +1,24 @@
+.users {
+    display: grid;
+    background-color: white;
+    
+  }
+  
+  .users ul {
+    list-style: none;
+    padding: 1rem;
+   
+  }
+  
+  .users li {
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  .realz li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  
