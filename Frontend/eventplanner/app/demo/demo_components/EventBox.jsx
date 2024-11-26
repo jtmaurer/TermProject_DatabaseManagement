@@ -18,10 +18,16 @@ const EventBox = ({ event, tickets, order_id }) => {
                 Tickets:
               </Typography>
               {tickets.map((ticket) => (
-                <Typography variant="body2" key={ticket.ticket_id}>
-                  Seat: {ticket.seat_number}{" "}
-                  {ticket.order_id && `(Order ID: ${ticket.order_id})`}
-                </Typography>
+                <div key={ticket.ticket_id}>
+                  <Typography variant="body2" >
+                    Ticket ID: {ticket.ticket_id}{" "}
+                    {ticket.order_id && `(Order ID: ${ticket.order_id})`}
+                  </Typography>
+                  <Typography variant="body2" >
+                    Seat: {ticket.seat_number}{" "}
+                    {ticket.order_id && `(Order ID: ${ticket.order_id})`}
+                  </Typography>
+                </div>
               ))}
             </div>
           )}

@@ -1,11 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./page.css";
 import Hdr3 from "../demo_components/Hdr3";
 import EventList from "../demo_components/EventList";
+import { UserContext } from "../demo_contexts/UserContext.jsx";
+
 
 const MyEvents = () => {
+  const { user_id } = useContext(UserContext);
+
   return (
     <div>
       <Hdr3 />
@@ -13,7 +17,7 @@ const MyEvents = () => {
       <EventList
         filters={{
           user_ordered_events: true,
-          user_id: 1
+          user_id: user_id 
         }}
       />
     </div>

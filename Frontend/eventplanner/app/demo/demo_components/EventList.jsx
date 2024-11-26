@@ -10,9 +10,10 @@ const EventList = ({ filters }) => {
   // Function to build query string from filters
   const buildQueryString = (filters) => {
     const queryParams = new URLSearchParams();
-
+    console.log(filters)
     // Iterate over each filter and append to queryParams
     Object.keys(filters).forEach((key) => {
+       
       if (
         filters[key] !== undefined &&
         filters[key] !== null &&
