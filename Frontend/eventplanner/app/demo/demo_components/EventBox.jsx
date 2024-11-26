@@ -1,11 +1,30 @@
 import React from "react";
-import { Card, CardContent, Typography, Grid2 } from "@mui/material";
+import { Card, CardContent, Typography, Grid } from "@mui/material";
+import PropTypes from "prop-types";
 
-const EventBox = ({ event }) => {
+const EventBox = ({ event, tickets, order_id }) => {
   return (
-    <Grid2 item xs={12} sm={6} md={4}>
+    <Grid item xs={12} sm={6} md={4}>
       <Card>
         <CardContent>
+          {order_id && (
+            <Typography variant="body2" style={{ marginTop: "10px" }}>
+              <strong>Order ID:</strong> {order_id}
+            </Typography>
+          )}
+          {tickets && tickets.length > 0 && (
+            <div style={{ marginTop: "10px" }}>
+              <Typography variant="h6" component="div">
+                Tickets:
+              </Typography>
+              {tickets.map((ticket) => (
+                <Typography variant="body2" key={ticket.ticket_id}>
+                  Seat: {ticket.seat_number}{" "}
+                  {ticket.order_id && `(Order ID: ${ticket.order_id})`}
+                </Typography>
+              ))}
+            </div>
+          )}
           <Typography variant="h5" component="div">
             {event.event_name}
           </Typography>
@@ -28,13 +47,47 @@ const EventBox = ({ event }) => {
             <img
               src={`data:image/jpeg;base64,${event.image}`}
               alt={event.venue_name}
-              style={{ width: "100%", maxWidth: "400px", height: "auto" }}
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                height: "auto",
+                marginTop: "10px",
+              }}
             />
           )}
         </CardContent>
       </Card>
-    </Grid2>
+    </Grid>
   );
+};
+
+// Define PropTypes for type checking
+EventBox.propTypes = {
+  event: PropTypes.shape({
+    event_id: PropTypes.number.isRequired,
+    event_name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    event_date: PropTypes.string.isRequired,
+    start_time: PropTypes.string.isRequired,
+    venue_name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    // Add other event properties as needed
+  }).isRequired,
+  tickets: PropTypes.arrayOf(
+    PropTypes.shape({
+      ticket_id: PropTypes.number.isRequired,
+      seat_number: PropTypes.string.isRequired,
+      order_id: PropTypes.number,
+    })
+  ),
+  order_id: PropTypes.number,
+};
+
+EventBox.defaultProps = {
+  tickets: [],
+  order_id: null,
 };
 
 export default EventBox;
