@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 
 // Create the UserContext with default value null
 export const UserContext = createContext({
-  user_id: 1,
+  user_id: null,
   setUserId: () => {},
   clearUserId: () => {},
 });
 
 // Create a Provider component
 export const UserProvider = ({ children }) => {
-  const [user_id, setUserIdState] = useState(1);
+  const [user_id, setUserIdState] = useState(null);
 
   // Method to set the user_id
   const setUserId = (id) => {

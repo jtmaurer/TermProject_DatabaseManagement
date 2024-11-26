@@ -48,11 +48,6 @@ public class User {
 
     /**
      * Parameterized constructor
-     * @param userId
-     * @param username
-     * @param hashed_password
-     * @param salt
-     * @param createdAt
      */
     public User(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt, String role, String email){
         this.userId = userId;
@@ -88,5 +83,12 @@ public class User {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+    public String getEmail() {
+        return email;
+    }
+    
+    public String getRole() {
+        return role;
     }
 }

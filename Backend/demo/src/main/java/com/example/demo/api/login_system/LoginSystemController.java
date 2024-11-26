@@ -62,21 +62,21 @@ public class LoginSystemController {
      */
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/login")
-    public String login(
+    public User login(
             @RequestParam(required = true) String username,
             @RequestParam(required = true) String password
     ) throws Exception {
         User account = usersLoginService.findByUsername(username);
         if (account == null) {
-            return "Username not found"; //Username already taken
+            return null; //Username already taken
         }
 
         String hashed_password = usersLoginService.hashPassword(password, account.getSalt());
 
         if (hashed_password.equals(account.getHashedPassword())) {
-            return "Login Successful: " + account.getUsername();
+            return account;
         } else {
-            return "Password incorrect";
+            return null;
         }
     }
 

@@ -58,7 +58,7 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
             + "NATURAL JOIN venue "
             + "NATURAL JOIN orders "
             + "NATURAL JOIN ticket "
-            + "NATURAL JOIN payment "
+        //     + "NATURAL JOIN payment "
             + "WHERE orders.user_id = :user_id", nativeQuery = true)
     List<Map<String, Object>> findUserOrderDetails(@Param("user_id") int userId);
 

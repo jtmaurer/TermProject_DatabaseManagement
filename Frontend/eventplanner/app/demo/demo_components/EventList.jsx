@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import EventBox from "./EventBox";
 import PropTypes from "prop-types";
+import { UserContext } from "../demo_contexts/UserContext";
 
 const EventList = ({ filters }) => {
   const [events, setEvents] = useState([]); // State for the list of events
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
+  const {user_id} = useContext(UserContext);
 
   // Function to build query string from filters
   const buildQueryString = (filters) => {
@@ -33,7 +35,7 @@ const EventList = ({ filters }) => {
     try {
       const queryString = buildQueryString(filters);
       const response = await fetch(
-        `http://localhost:8080/events?${queryString}`
+        `http://localhost:8080/events?${queryString}&user_id=${user_id}`
       );
 
       if (!response.ok) {

@@ -48,7 +48,7 @@ public class EventSystemService {
         Date sqlDate = date != null ? Date.valueOf(date) : null;
         if (user_ordered_events == true && user_id != null) {
             List<Map<String, Object>> raw_order_details = eventRepository.findUserOrderDetails(user_id);
-            // return raw_order_details;
+            System.out.println(raw_order_details);
             return new OrderTicketList(raw_order_details);
         } else if (user_ordered_events == false && user_id != null) {
             return eventRepository.findEventsNotAssociatedWithUser(location, sqlDate, price, user_id);
