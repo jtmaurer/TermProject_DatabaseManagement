@@ -90,7 +90,10 @@
 /******/ 	})();
 /******/ 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Thomas-branch
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -103,7 +106,10 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
+<<<<<<< HEAD
 >>>>>>> thomas-branch
+=======
+>>>>>>> Thomas-branch
 /******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	(() => {
 /******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -194,10 +200,14 @@
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 /******/ 		__webpack_require__.h = () => ("0a9731099e39f252")
 =======
 /******/ 		__webpack_require__.h = () => ("15194cb504b58cbf")
 >>>>>>> thomas-branch
+=======
+/******/ 		__webpack_require__.h = () => ("15194cb504b58cbf")
+>>>>>>> Thomas-branch
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

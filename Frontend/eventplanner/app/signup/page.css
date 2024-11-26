@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-color: black;
     color: black;
@@ -111,3 +112,118 @@ body {
   color: #333; 
 }
 
+=======
+body {
+    background-color: black;
+    color: black;
+  }
+  
+.signstuff {
+  display: flex;
+}
+
+.signLeft {
+  width: 50%;
+  height: 1049px;
+  background-image: url('https://cdn.paris.fr/paris/2019/07/24/huge-41b950ab4de6f1fa5310b2e4ea4a47f2.jpeg');
+  background-size: cover; 
+  background-position: center; 
+}
+
+.go-to-log {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  font-size: 50px;
+  margin-top: 350px;
+  color: white;
+}
+.go-to-log {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.go-to-log button {
+  margin-left: 106px;
+  margin-right: 106px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 80px;
+  color: white;
+  background-color: rgba(211, 211, 211, 0.747);
+  border: 0;
+  border-radius: 5px;
+}
+
+
+.signRight {
+  width: 50%;
+  background-color: #f8f8fa;
+
+}
+
+
+.signHolder {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-top: 250px;
+}
+
+.input-label {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.signHolder input{
+  height: 30px;
+  border: 0;
+  width: 600px;
+}
+
+.signup-button-holder {
+  margin-top: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-button-holder button {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: #7848f2;
+  color: white;
+}
+
+.background {
+  
+  height: 100vh; 
+  width: 100%; 
+}
+
+.signRight b {
+  font-size: 30px;
+  
+  
+  
+}
+
+.signTitle {
+  text-align: center; 
+  width: 100%; 
+  margin-top: 30px; 
+  margin-bottom: 30px;
+}
+
+.signTitle b {
+  display: inline-block; 
+  font-size: 30px; 
+  color: #333; 
+}
+
+>>>>>>> Thomas-branch

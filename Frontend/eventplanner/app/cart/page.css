@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 body {
@@ -270,3 +271,277 @@ hr {
 
 
 
+=======
+
+
+body {
+    background-color: #343434;
+    filter: brightness(100%);
+    color: black;
+}
+
+.cpager {
+    display: flex;
+    
+    background-color: #A8C3C9;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    width: 80%;
+    border-radius: 25px;
+    
+}
+
+.cfirst {
+    background-color: #F6EDE2;
+    height: 645px;
+    width: 13%;
+    text-align: center;
+    border-radius: 25px;
+    
+
+}
+
+.cfirst button:hover {
+    background-color: gray;
+    width: 120px;
+    border-radius: 15px;
+}
+
+.cfirst button:active {
+    background-color: lightgray;
+   
+}
+
+.cfirst img{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cmiddlez {
+    background-color: #A8C3C9;
+    height: 640px;
+    width: 86.2%;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+.clast {
+    background-color: #fbf2f2;
+    ;
+    height: 1025px;
+    width: 13%;
+    text-align: center;
+    border-radius: 25px;
+    margin: .5%;
+    
+}
+
+.csearch-bar {
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+    text-align:center;
+}
+
+
+
+.cusers-list-container {
+    overflow-y: auto;
+    max-height: 490px; /* Default size */
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .cusers-list-container.expanded {
+    max-height: 500px; /* Expanded size for many items */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+
+.cfilter-dropdown {
+    height: 30px;
+    border-radius: 15px;
+}
+
+.cmiddle11 {
+    background-color: #747C84;
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-top: 10px;
+    
+ 
+}
+
+.cmiddle33 {
+    background-color: #747C84;
+    width: 100%;
+    height: 500px;
+    margin-left: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.cmiddle22 {
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin: 1%;
+    margin-left: 10px;
+    
+ 
+}
+
+.csort {
+    margin-left: 1%;
+    background-color: #fbf2f2;
+    width: 5%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
+
+img {
+    height: 17%;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 20%;
+    border-radius: 100px;
+    margin-bottom: 5%;
+
+}
+
+
+
+hr {
+    border-color: black;
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 40%;
+}
+
+.cdir {
+    margin: 5%;
+}
+
+.cname {
+    font-size: 30px;
+}
+
+
+
+.cdateorg {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 100px;
+    margin-right: 0;
+}
+
+.cupcoming {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5px;
+}
+
+.cdateorg1 {
+    background-color: rgba(217,217,217,255);
+    text-align: center;
+    width: 170px;
+    margin-left: 3px;
+    margin-top: 5px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.capex {
+    display: flex;
+    justify-content: center;
+}
+
+.clol {
+    background-color: #000000;
+    width: 1px;
+}
+
+.creal {
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.cformz {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clexz {
+    display: flex;
+    justify-content: right;
+    
+    
+}
+
+.clex2z {
+    margin-top: 36px;
+    margin-right: 20px;
+    font-size: 25px;
+    position: absolute;
+    background-color: white;
+    color: red;
+}
+
+.crealz {
+    display: flex;
+    flex-direction: column;
+    background-color: #747C84;
+    
+ 
+}
+
+.cbordss {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    
+}
+
+.cbords11 {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cbords22 {
+    width: 160px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+>>>>>>> Thomas-branch

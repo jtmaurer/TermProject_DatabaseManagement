@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nav { 
     background-color: #f8f8fa;
     color: black;
@@ -79,3 +80,86 @@ nav {
 }
 
 
+=======
+nav { 
+    background-color: #f8f8fa;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.middleHdr {
+    
+    display: flex;
+   
+    
+    
+}
+
+.navba {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.green {
+    margin-top: 10px;
+    margin-left: 40px;
+    
+}
+
+.green1 {
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
+
+.green2 {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+   
+    
+}
+
+.middleBut {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoeh {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.hive {
+    margin-left: 5px;
+    color: #7f4ee6;
+}
+
+.green button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.green1 button {
+    width: 100px;
+    height: 40px;
+    background-color:#7f4ee6;
+    color: white;
+    border-radius: 5px;
+}
+
+.green2 button {
+    width: 100px;
+    height: 40px;
+    
+    border-radius: 5px;
+}
+
+
+>>>>>>> Thomas-branch
