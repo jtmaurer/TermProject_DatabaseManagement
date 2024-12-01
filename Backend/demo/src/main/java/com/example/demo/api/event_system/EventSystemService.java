@@ -1,8 +1,5 @@
 package com.example.demo.api.event_system;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,10 +13,11 @@ import com.example.demo.api.event_system.relevant_entities.Event;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketList;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketModelSolo;
 import com.example.demo.api.event_system.relevant_entities.Orders;
+import com.example.demo.api.event_system.relevant_entities.Payment;
 import com.example.demo.api.event_system.relevant_entities.Ticket;
-import com.example.demo.api.event_system.relevant_entities.Venue;
 import com.example.demo.api.event_system.relevant_repositories.EventRepository;
 import com.example.demo.api.event_system.relevant_repositories.OrdersRepository;
+import com.example.demo.api.event_system.relevant_repositories.PaymentRepository;
 import com.example.demo.api.event_system.relevant_repositories.TicketRepository;
 import com.example.demo.api.event_system.relevant_repositories.VenueRepository;
 import com.example.demo.api.login_system.User;
@@ -28,7 +26,6 @@ import com.example.demo.api.login_system.UserRepository;
 @Service
 public class EventSystemService {
 
-    
     @Autowired
     private VenueRepository venueRepository;
     @Autowired
@@ -39,6 +36,8 @@ public class EventSystemService {
     private UserRepository userRepository;
     @Autowired
     private OrdersRepository ordersRepository;
+    @Autowired
+    private PaymentRepository paymentRepository;
 
     public EventSystemService() {
 
@@ -57,7 +56,8 @@ public class EventSystemService {
         }
     }
 
-    public OrderTicketModelSolo createOrder(Date order_date, Integer number_of_tickets, Integer user_id, Integer event_id) {
+    public OrderTicketModelSolo createOrder(Date order_date, Integer number_of_tickets, Integer user_id, Integer event_id,
+            Double amount, String payment_method) {
         // Step 1: Create a new Order entity
         Orders newOrder = new Orders();
         newOrder.setOrder_date(order_date);
@@ -70,6 +70,14 @@ public class EventSystemService {
         // Fetch and set the Event entity (assuming an EventRepository exists)
         Event event = eventRepository.findById(event_id).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
         newOrder.setEvent_id(event);
+
+        Payment newPayment = new Payment();
+        newPayment.setAmount(amount);
+        newPayment.setPayment_method(payment_method);
+        // newPayment.setOrder_id(newOrder);
+        paymentRepository.save(newPayment);
+
+        newOrder.setPayment_id(newPayment);
 
         // Save the Order entity to the database
         Orders savedOrder = ordersRepository.save(newOrder);
@@ -95,6 +103,8 @@ public class EventSystemService {
         orderData.put("order_id", savedOrder.getOrder_id());
         orderData.put("order_date", savedOrder.getOrder_date());
         orderData.put("number_of_tickets", savedOrder.getNumber_of_tickets());
+        orderData.put("amount", amount);
+        orderData.put("payment_method", payment_method);
         orderData.put("user_id", user_id);
         orderData.put("event_id", event_id);
 
@@ -106,28 +116,4 @@ public class EventSystemService {
         // Return the constructed OrderTicketModel
         return orderTicketModelSolo;
     }
-
-    // public void insertVenue() throws IOException {
-    //     String imagePath = "../Venue_Images/columbus_civic_center.jpg";
-    //     System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
-    //     System.out.println("**********************************************************************");
-
-    //     Venue venue = new Venue();
-    //     venue.setVenue_name("Columbus Civic Center");
-    //     venue.set_location("Columbus, GA");
-    //     venue.set_capacity(10600);
-    //     venue.set_venue_id(5);
-
-    //     // Read the image file into a byte array
-    //     byte[] imageBytes = Files.readAllBytes(Path.of(imagePath));
-    //     Byte[] boxedBytes = new Byte[imageBytes.length];
-    //     for (int i = 0; i < imageBytes.length; i++) {
-    //         boxedBytes[i] = imageBytes[i];
-    //     }
-    //     venue.set_image(boxedBytes);
-
-    //     // Save the venue to the database (assuming venueRepository exists)
-    //     venueRepository.save(venue);
-    // }
-
 }

@@ -1,4 +1,4 @@
-import {React, useState, useContext} from "react";
+import { React, useState, useContext } from "react";
 import { Card, CardContent, Typography, Grid } from "@mui/material";
 import PropTypes from "prop-types";
 import Model from "react-modal";
@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 const EventBox = ({ event, tickets, order_id }) => {
   const [visible, setVisible] = useState(false);
-  const {user_id} = useContext(UserContext);
+  const { user_id } = useContext(UserContext);
   const router = useRouter();
 
   const handleAddEvent = (order) => {
@@ -24,9 +24,17 @@ const EventBox = ({ event, tickets, order_id }) => {
         <Card>
           <CardContent>
             {order_id && (
-              <Typography variant="body2" style={{ marginTop: "10px" }}>
-                <strong>Order ID:</strong> {order_id}
-              </Typography>
+              <>
+                <Typography variant="body2" style={{ marginTop: "10px" }}>
+                  <strong>Order ID:</strong> {order_id}
+                </Typography>
+                <Typography variant="body2" style={{ marginTop: "10px" }}>
+                  <strong>Payment Amount: $</strong> {event.amount}
+                </Typography>
+                <Typography variant="body2" style={{ marginTop: "10px" }}>
+                  <strong>Payment Method:</strong> {event.payment_method}
+                </Typography>
+              </>
             )}
             {tickets && tickets.length > 0 && (
               <div style={{ marginTop: "10px" }}>
@@ -81,24 +89,26 @@ const EventBox = ({ event, tickets, order_id }) => {
         </Card>
       </Grid>
       {!order_id && (
-      <><button className="purchase" onClick={() => setVisible(true)}>
-          Purchase
-        </button><Model
-          className="formz"
-          isOpen={visible}
-          onRequestClose={() => setVisible(false)}
-          ariaHideApp={false}
-          style={{
-            overlay: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
-            content: {
-              width: "500px",
-              height: "500px",
-              margin: "auto",
-              borderRadius: "10px",
-              padding: "20px",
-            },
-          }}
-        >
+        <>
+          <button className="purchase" onClick={() => setVisible(true)}>
+            Purchase
+          </button>
+          <Model
+            className="formz"
+            isOpen={visible}
+            onRequestClose={() => setVisible(false)}
+            ariaHideApp={false}
+            style={{
+              overlay: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+              content: {
+                width: "500px",
+                height: "500px",
+                margin: "auto",
+                borderRadius: "10px",
+                padding: "20px",
+              },
+            }}
+          >
             <div className="lexz">
               <button className="lex2z" onClick={() => setVisible(false)}>
                 X
@@ -107,8 +117,11 @@ const EventBox = ({ event, tickets, order_id }) => {
             <BuyTicketForm
               onAddUser={handleAddEvent}
               eventId={event.event_id}
-              user_id={user_id} />
-          </Model></>
+              user_id={user_id}
+              price={event.price}
+            />
+          </Model>
+        </>
       )}
     </div>
   );

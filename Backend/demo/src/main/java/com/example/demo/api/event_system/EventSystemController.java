@@ -1,6 +1,5 @@
 package com.example.demo.api.event_system;
 
-import java.io.IOException;
 import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +38,11 @@ public class EventSystemController {
             @RequestParam(required = true) Date order_date,
             @RequestParam(required = true) Integer number_of_tickets,
             @RequestParam(required = true) Integer user_id,
-            @RequestParam(required = true) Integer event_id
+            @RequestParam(required = true) Integer event_id,
+            @RequestParam(required = true) Double amount,
+            @RequestParam(required = true) String payment_method
     ) {
-        return eventSystemService.createOrder(order_date, number_of_tickets, user_id, event_id);
+        return eventSystemService.createOrder(order_date, number_of_tickets, user_id, event_id, amount, payment_method);
     }
 
     // @CrossOrigin(origins = "http://localhost:3000")

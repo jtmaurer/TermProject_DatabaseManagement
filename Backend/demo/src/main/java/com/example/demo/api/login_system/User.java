@@ -34,9 +34,6 @@ public class User {
     @Column(name = "hashed_password", nullable = false, length = 255)
     private String hashed_password;
 
-    @Column(name = "salt", nullable = false, length = 255)
-    private String salt;
-
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -49,11 +46,10 @@ public class User {
     /**
      * Parameterized constructor
      */
-    public User(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt, String role, String email){
+    public User(Integer userId, String username, String hashed_password, LocalDateTime createdAt, String role, String email){
         this.userId = userId;
         this.username = username;
         this.hashed_password = hashed_password;
-        this.salt = salt;
         this.createdAt = createdAt;
         this.role = role;
         this.email = email;
@@ -71,10 +67,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getSalt() {
-        return salt;
     }
 
     public String getHashedPassword(){

@@ -45,10 +45,9 @@ public class LoginSystemController {
         if (usersLoginService.findByUsername(username) != null) {
             return null; //Username already taken
         }
-        String new_salt = usersLoginService.generateSalt();
 
-        String hashed_password = usersLoginService.hashPassword(password, new_salt);
-        return usersLoginService.insertUsersLogin(usersLoginService.generateUsersLogin(username, email, hashed_password, new_salt));
+        String hashed_password = usersLoginService.hashPassword(password);
+        return usersLoginService.insertUsersLogin(usersLoginService.generateUsersLogin(username, email, hashed_password));
     }
 
     /**
@@ -70,10 +69,7 @@ public class LoginSystemController {
         if (account == null) {
             return null; //Username already taken
         }
-
-        String hashed_password = usersLoginService.hashPassword(password, account.getSalt());
-
-        if (hashed_password.equals(account.getHashedPassword())) {
+        if(usersLoginService.verify_password(password, account)){
             return account;
         } else {
             return null;

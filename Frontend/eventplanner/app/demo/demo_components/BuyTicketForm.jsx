@@ -1,15 +1,22 @@
 // src/components/BuyTicketForm.jsx
 
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography, MenuItem } from "@mui/material";
 
-const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
+const BuyTicketForm = ({ onAddUser, eventId, user_id, price }) => {
   const [numberOfTickets, setNumberOfTickets] = useState(1);
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [totalPrice, setTotalPrice] = useState(price);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Update total price whenever number of tickets or price changes
+  useEffect(() => {
+    setTotalPrice(numberOfTickets * price);
+  }, [numberOfTickets, price]);
 
   const handleTicketPurchase = async (e) => {
     e.preventDefault();
@@ -19,6 +26,10 @@ const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
     // Basic validation
     if (numberOfTickets < 1) {
       setError("Please purchase at least one ticket.");
+      return;
+    }
+    if (!paymentMethod) {
+      setError("Please select a payment method.");
       return;
     }
 
@@ -32,7 +43,9 @@ const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
       numberOfTickets
     )}&user_id=${encodeURIComponent(user_id)}&event_id=${encodeURIComponent(
       eventId
-    )}`;
+    )}&payment_method=${encodeURIComponent(
+      paymentMethod
+    )}&amount=${encodeURIComponent(totalPrice)}`;
 
     setLoading(true);
 
@@ -49,7 +62,6 @@ const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
       // Assuming the API returns the created order details
       setSuccess("Tickets purchased successfully!");
       onAddUser(data); // Notify the parent component
-
     } catch (err) {
       setError(err.message);
       console.error("Ticket Purchase Error:", err);
@@ -78,11 +90,33 @@ const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
         type="number"
         InputProps={{ inputProps: { min: 1 } }}
         value={numberOfTickets}
-        onChange={(e) => setNumberOfTickets(parseInt(e.target.value, 10))}
+        onChange={(e) => setNumberOfTickets(parseInt(e.target.value, 10) || 1)}
         required
         fullWidth
         margin="normal"
       />
+
+      {/* Payment Method Input */}
+      <TextField
+        label="Payment Method"
+        select
+        value={paymentMethod}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+        required
+        fullWidth
+        margin="normal"
+      >
+        {/* Add your payment methods here */}
+        <MenuItem value="Credit Card">Credit Card</MenuItem>
+        <MenuItem value="PayPal">PayPal</MenuItem>
+        <MenuItem value="Bank Transfer">Bank Transfer</MenuItem>
+      </TextField>
+
+      {/* Display Total Price */}
+      <Typography variant="body1" style={{ marginTop: "10px" }}>
+        <strong>Total Price:</strong> ${totalPrice.toFixed(2)}
+      </Typography>
+
       <Button
         type="submit"
         variant="contained"
@@ -102,6 +136,7 @@ BuyTicketForm.propTypes = {
   onAddUser: PropTypes.func.isRequired,
   eventId: PropTypes.number.isRequired,
   user_id: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 const styles = {
@@ -109,11 +144,11 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "#ffffff", // Added background color
-    padding: "2rem",             // Optional: Add padding for better spacing
-    borderRadius: "8px",         // Optional: Rounded corners
+    padding: "2rem", // Optional: Add padding for better spacing
+    borderRadius: "8px", // Optional: Rounded corners
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: Add a subtle shadow
-    maxWidth: "500px",           // Optional: Set a max width
-    margin: "0 auto",            // Optional: Center the form
+    maxWidth: "500px", // Optional: Set a max width
+    margin: "0 auto", // Optional: Center the form
   },
 };
 

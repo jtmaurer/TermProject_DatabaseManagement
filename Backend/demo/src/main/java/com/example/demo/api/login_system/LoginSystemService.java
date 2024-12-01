@@ -1,19 +1,16 @@
 package com.example.demo.api.login_system;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.SecureRandom;
 import java.time.LocalDateTime;
-import java.util.Base64;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureAlgorithm; 
 import io.jsonwebtoken.security.Keys;
 
 /**
@@ -28,6 +25,8 @@ public class LoginSystemService {
 
     @Autowired
     private UserRepository userRepository;
+
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     /**
      * Default constructor for the LoginSystemService class.
@@ -50,55 +49,17 @@ public class LoginSystemService {
         return userRepository.count();
     }
 
-    /**
-     * Generates a random salt for password hashing using SecureRandom.
-     *
-     * @return A Base64-encoded string representation of the generated salt.
-     */
-    public static String generateSalt() {
-        // SecureRandom instance
-        SecureRandom secureRandom = new SecureRandom();
-
-        // Create a byte array for the salt
-        byte[] salt = new byte[16];
-
-        // Generate random bytes
-        secureRandom.nextBytes(salt);
-
-        // Return the salt as a Base64-encoded string
-        return Base64.getEncoder().encodeToString(salt);
-    }
-
-    /**
-     * Hashes a password using SHA-256 with the provided salt.
-     *
-     * @param password The password to hash.
-     * @param salt     The salt to combine with the password.
-     * @return A Base64-encoded string representation of the hashed password.
-     * @throws Exception If the SHA-256 algorithm is not available.
-     */
-    public static String hashPassword(String password, String salt) throws Exception {
+    public static String hashPassword(String password) throws Exception {
         // Concatenate salt and password
-        String saltedPassword = salt + password;
-
-        // Use SHA-256 hashing algorithm
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] hash = digest.digest(saltedPassword.getBytes(StandardCharsets.UTF_8));
-
-        // Return the hash as a Base64-encoded string
-        return Base64.getEncoder().encodeToString(hash);
+        return encoder.encode(password);
     }
 
-    /**
-     * Creates a new Users_Login entity with the provided username, hashed password, and salt.
-     *
-     * @param username        The username of the user.
-     * @param hashed_password The hashed password of the user.
-     * @param salt            The salt used for hashing the password.
-     * @return A Users_Login object containing the user details.
-     */
-    public User generateUsersLogin(String username, String email, String hashed_password, String salt) {
-        return new User((int) userRepository.count() + 1, username, hashed_password, salt, LocalDateTime.now(), "user", email);
+    public static boolean verify_password(String plain_password, User account) throws Exception {
+        return encoder.matches(plain_password, account.getHashedPassword());
+    }
+
+    public User generateUsersLogin(String username, String email, String hashed_password) {
+        return new User((int) userRepository.count() + 1, username, hashed_password, LocalDateTime.now(), "user", email);
     }
 
     /**

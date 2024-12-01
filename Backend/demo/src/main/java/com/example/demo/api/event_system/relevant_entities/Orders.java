@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -39,6 +40,10 @@ public class Orders {
     @ManyToOne
     @JoinColumn(name = "event_id", referencedColumnName = "event_id")
     private Event event_id;
+    
+    @OneToOne
+    @JoinColumn(name = "payment_id", referencedColumnName = "payment_id")
+    private Payment payment_id; //For now atleast
 
     /**
      * Default constructor required for JPA entity instantiation.
@@ -46,12 +51,13 @@ public class Orders {
     public Orders(){
     }
 
-    public Orders(Integer order_id, Date order_date, Integer number_of_tickets, User user_id, Event event_id){
+    public Orders(Integer order_id, Date order_date, Integer number_of_tickets, User user_id, Event event_id, Payment payment_id){
         this.event_id = event_id;
         this.user_id = user_id;
         this.number_of_tickets = number_of_tickets;
         this.order_date = order_date;
         this.order_id = order_id;
+        this.payment_id = payment_id;
     }
 
     public Integer getOrder_id() {
@@ -92,5 +98,13 @@ public class Orders {
 
     public void setEvent_id(Event event_id) {
         this.event_id = event_id;
+    }
+    
+    public Payment getPayment_id() {
+        return this.payment_id;
+    }
+    
+    public void setPayment_id(Payment payment_id) {
+        this.payment_id = payment_id;
     }
 }

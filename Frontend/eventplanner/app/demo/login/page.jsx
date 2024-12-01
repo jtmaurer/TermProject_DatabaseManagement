@@ -1,15 +1,90 @@
 "use client";
 import "./page.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
+import { UserContext } from "../demo_contexts/UserContext";
 
 const loginup = () => {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
+
+  // State for handling loading and errors
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  // Access context to set user_id
+  const { setUserId } = useContext(UserContext);
 
   const router = useRouter();
+
+  // Handler for signup button click
+  const handleLogin = async () => {
+    // Reset error state
+    setError("");
+
+    // Basic form validation
+    if (!username || !password) {
+      setError("Please fill in all fields.");
+      return;
+    }
+    // Set loading state
+    setLoading(true);
+
+    try {
+      // Construct the API URL with query parameters
+      const apiUrl = `http://localhost:8080/login?username=${encodeURIComponent(
+        username
+      )}&password=${encodeURIComponent(password)}`;
+
+      // Make the API call
+      const response = await fetch(apiUrl);
+
+      // Check if the response is OK (status code 200-299)
+      if (!response.ok) {
+        // Extract error message from response
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Login failed.");
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Extract userId from the response
+      const { userId } = data;
+
+      if (typeof userId === "string") {
+        userId = Number(userId);
+        if (isNaN(userId)) {
+          throw new Error("Received userId is not a valid number.");
+        }
+      }
+
+      console.log(
+        typeof userId,
+        "**********************************************************************"
+      );
+
+      if (!userId) {
+        throw new Error("Invalid response from server.");
+      }
+
+      // Update the user_id in context
+      setUserId(userId);
+
+      // Optionally, store userId in localStorage for persistence
+      // localStorage.setItem("user_id", userId);
+
+      // Redirect to home page
+      router.push("/demo/home");
+    } catch (err) {
+      // Handle errors (e.g., network issues, server errors)
+      setError(err.message);
+      console.error("Signup error:", err);
+    } finally {
+      // Reset loading state
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="loginstuff">
@@ -20,11 +95,11 @@ const loginup = () => {
           </div>
 
           <label className="input-group">
-            <p className="input-label">Your Email:</p>
+            <p className="input-label">Your Username:</p>
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </label>
           <label className="input-group">
@@ -40,12 +115,13 @@ const loginup = () => {
             />
           </label>
 
-          <div className="loginup-button-holder">
+          <div className="login-button-holder">
             <button
-              onClick={() => router.push("/demo/home")}
+              onClick={handleLogin} // Changed to call handleSignup
               className="loginup-button"
+              disabled={loading} // Disable button while loading
             >
-              Login In
+              {loading ? "Logging In..." : "Log In"}
             </button>
           </div>
         </div>
