@@ -1,0 +1,139 @@
+body {
+    background-color: #f8f8fa !important;
+}
+
+
+.OGHomePageText {
+    text-align: center;
+    margin-top: 300px;
+    color: white;
+    
+}
+
+.OGHomePageText h1{
+    font-size: 50px;
+}
+
+.OGHomePageText h3 {
+    font-size: 20px;
+}
+
+.OGstatic-route-icon {
+    display: none !important;
+  }
+
+  .OGcontent::before {
+    display: none;
+  }
+
+.OGHomePageMainButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.OGfoot {
+    width: 100.4%;
+    background-color: orange;
+}
+
+.OGhoriline {
+    height: 1px;
+    background-color: black;
+}
+
+.OGHomePageMainButtons button {
+    
+    height: 60px;
+    width: 120px;
+    margin-right: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.OGimgButton{
+    width: 600px;
+    height: 60px;    
+    font-size: 20px;
+    display: flex;
+    position:relative;
+    color: black;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: auto;
+    
+    
+}
+
+
+.OGtextHome {
+    color: #F7FFF7;
+    background-color: #343434;
+    text-align: center;
+    width: fit-content;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OGtextHome h1 {
+    font-size: 40px;
+}
+
+.OGtextHome h3 {
+    font-size: 20px;
+}
+
+.OGimgButton button{
+    
+    width: 180px;
+    height: 60px;
+    background-color: #aa5f8b;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-color: #A38560;
+    border-width: 5px;
+    color: black;
+    
+}
+
+
+
+.OGimgButton button:hover{
+    background-color: rgb(116, 108, 108);
+    width: 200px;
+    height: 60px;
+  
+}
+
+.OGimgButton button:active {
+    background-color: white;
+}
+
+
+.OGmidButtons {
+   
+    height: 60px;
+    width: 150px;
+    margin-right: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+    height: 953px;
+   
+}
+
+.OGHDRScreen {
+    width: 100%;
+    position:fixed;
+}

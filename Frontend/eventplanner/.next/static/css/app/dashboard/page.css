@@ -1,0 +1,412 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/dashboard/page.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+body {
+    background-color: #f8f8fa;
+    color: black;
+}
+
+.pager {
+    display: flex;
+    background-color: #a382ea;
+    margin: 1% auto;
+    width: 80%;
+    border-radius: 25px;
+}
+
+.middlez {
+    background-color: #a382ea;
+    height: 340px;
+    width: 86.2%;
+    text-align: center;
+    border-radius: 25px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle11 {
+    background-color: #CCCCFF;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    margin: 10px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.middle33 {
+    background-color: #CCCCFF;
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+    margin: 10px 5px 0;
+    padding: 20px;
+}
+
+.bordss {
+    display: flex;
+    justify-content: center;
+}
+
+.bords11 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+    margin-top: -10px;
+}
+
+.profile-info h2, .profile-info p {
+    margin: 5px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-button {
+    background-color: #a382ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.action-button:hover {
+    background-color: #8b6cc6;
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.edit-form input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-form button {
+    margin-top: 10px;
+    background-color: #a382ea;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-form button:hover {
+    background-color: #8b6cc6;
+}
+
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    
+}
+
+.profile-info h2, .profile-info p {
+    margin: 5px 0;
+}
+
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-button {
+    background-color: #a382ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.action-button:hover {
+    background-color: #8b6cc6;
+}
+
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/Hdr.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+nav { 
+    background-color: #f8f8fa;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.middleHdr {
+    
+    display: flex;
+   
+    
+    
+}
+
+.navba {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.green {
+    margin-top: 10px;
+    margin-left: 40px;
+    
+}
+
+.green1 {
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
+
+.green2 {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+   
+    
+}
+
+.middleBut {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoeh {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.hive {
+    margin-left: 5px;
+    color: #7f4ee6;
+}
+
+.green button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.green1 button {
+    width: 100px;
+    height: 40px;
+    background-color:#7f4ee6;
+    color: white;
+    border-radius: 5px;
+}
+
+.green2 button {
+    width: 100px;
+    height: 40px;
+    
+    border-radius: 5px;
+}
+
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/components/Footer.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+footer {
+    background: #0f107a;
+    color: white;
+    height: 450px;
+   
+    margin-left: -10px;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  
+.cta {
+  width: 350px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cta p {
+  margin-top: -15px;
+  margin-left: 80px;
+
+}
+
+.cta h1 {
+  padding-top: 15px;
+  margin-left: 80px;
+
+
+}
+
+.couchimg {
+  width: 400px;
+  height: 200px;
+  
+}
+
+  .cta button {
+    color: white;
+    background-color: #7848f4;
+    border: none;
+    border-radius: 5px;
+    width: 260px;
+    margin-left: 80px;
+    height: 30px;
+    
+  }
+
+  .subscribe {
+    margin-top: 30px;
+  }
+
+  .subscribe input {
+    margin-right: 20px;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .subscribe button {
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #7848f4;
+    color: white;
+  }
+
+  .connect {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .connect p {
+   
+    margin-right: 30px;
+  }
+
+  .line {
+    height: 2px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 20px;
+  }
+
+  .Cbottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .lang {
+    display: flex;
+    margin-left: 95px;
+    
+  }
+
+  .lang div {
+    margin-right: 20px;
+
+   
+  }
+
+  .social {
+    display: flex;
+    margin-top: -10px;
+    
+  }
+
+  
+
+  .foot-image1 {
+    width: 50px;
+    height: 50px;
+  }
+  .foot-image2 {
+    width: 70px;
+    height: 70px;
+    margin-top: -10px;
+  }
+  .foot-image3 {
+    width: 43px;
+    height: 43px;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+
+  .copy {
+    margin-right: 95px;
+  }
+  

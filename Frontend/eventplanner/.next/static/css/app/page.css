@@ -1,0 +1,816 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/page.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+body {
+    background-color: #f8f8fa !important;
+}
+
+
+.OGHomePageText {
+    text-align: center;
+    margin-top: 300px;
+    color: white;
+    
+}
+
+.OGHomePageText h1{
+    font-size: 50px;
+}
+
+.OGHomePageText h3 {
+    font-size: 20px;
+}
+
+.OGstatic-route-icon {
+    display: none !important;
+  }
+
+  .OGcontent::before {
+    display: none;
+  }
+
+.OGHomePageMainButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.OGfoot {
+    width: 100.4%;
+    background-color: orange;
+}
+
+.OGhoriline {
+    height: 1px;
+    background-color: black;
+}
+
+.OGHomePageMainButtons button {
+    
+    height: 60px;
+    width: 120px;
+    margin-right: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.OGimgButton{
+    width: 600px;
+    height: 60px;    
+    font-size: 20px;
+    display: flex;
+    position:relative;
+    color: black;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: auto;
+    
+    
+}
+
+
+.OGtextHome {
+    color: #F7FFF7;
+    background-color: #343434;
+    text-align: center;
+    width: fit-content;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OGtextHome h1 {
+    font-size: 40px;
+}
+
+.OGtextHome h3 {
+    font-size: 20px;
+}
+
+.OGimgButton button{
+    
+    width: 180px;
+    height: 60px;
+    background-color: #aa5f8b;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-color: #A38560;
+    border-width: 5px;
+    color: black;
+    
+}
+
+
+
+.OGimgButton button:hover{
+    background-color: rgb(116, 108, 108);
+    width: 200px;
+    height: 60px;
+  
+}
+
+.OGimgButton button:active {
+    background-color: white;
+}
+
+
+.OGmidButtons {
+   
+    height: 60px;
+    width: 150px;
+    margin-right: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+    height: 953px;
+   
+}
+
+.OGHDRScreen {
+    width: 100%;
+    position:fixed;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/components/Hero.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+
+.OGhero {
+    position: relative;
+    text-align: center;
+    background-color: #f8f8fa;
+  }
+  
+  .OGhero-image {
+    width: 1800px;
+    height: 800px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .OGsearch-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: #0f107a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 1500px;
+    height: 100px;
+    
+    
+  }
+  
+  .OGsearch-bar input {
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+    width: 400px;
+    border: 0;
+    background-color: #f0f1f5;
+  }
+
+ 
+
+  .OGsearch-bar button{
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 80px;
+    background-color: #7848f4;
+    margin-left: 20px;
+  }
+
+  .OGsearch-bar img {
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: px;
+    
+  }
+
+  .OGheroholder {
+    margin-left: auto;
+    display: flex;
+    margin-right: auto;
+  }
+
+  .OGselecter {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 15px;
+    
+  }
+
+  .OGselecter2 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 15px;
+    
+  }
+
+  .OGselecter label {
+    text-align: left;
+    margin-left: 25px;
+    
+  }
+
+  .OGselecter2 label {
+    text-align: left;
+    margin-left: 5px;
+    
+  }
+
+  .OGselecter2 input {
+    margin-left: 0px;
+  }
+
+
+  
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/User.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.OGlist11 {
+ 
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-bottom: 20px;
+  border-color: black;
+  border: 2px solid black;
+  
+}
+
+.OGprice {
+  background-color: #fffffb;
+  width: 40px;
+ 
+  border-radius: 5px;
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  height: 25px;
+  
+ 
+ 
+}
+
+.OGprice p {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  color: #7848f4;
+}
+
+
+.OGexitX {
+  font-size: 30px;
+  
+  background-color: darkred;
+  color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 300px;
+}
+
+.OGfavorite-button {
+  background-color: rgb(255, 251, 0);
+ 
+  font-size: 20px;
+  width: 300px;
+  
+  
+}
+
+.OGeventTitle {
+  display: flex;
+  height: 25px;
+  width: 240px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: black;
+  font-size: 20px;
+}
+
+.OGeventTitle2 {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 25px;
+  width: 240px;
+  color: #7848f4;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.OGEvent-image {
+  
+  border-radius: 10px;
+  width: 260px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.OGimgcontainer {
+  margin-top: 15px;
+  width: 260px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+
+.OGold11 {
+  text-align: left;
+  
+  margin: 0;
+  margin-right: 5px;
+
+  
+  
+  
+}
+
+.OGold1 {
+  font-size: 50px;
+}
+
+
+
+.OGbor1 {
+  margin: 0;
+
+  
+  
+  width: 300px;
+}
+
+.OGold11s {
+  text-align: left;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 15px;
+  margin-top: 0px;
+  color: rgb(107, 95, 95);
+  height: 25px;
+  width: 240px;
+  margin-bottom: 0;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/Card.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.card12 {
+  background: lightgray;
+  
+  border-radius: 10px;
+  color: black;
+  margin: 0;
+ 
+}
+
+
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/UsersList.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.OGusers {
+    display: grid;
+    background-color: white;
+    
+  }
+  
+  .OGusers ul {
+    list-style: none;
+    padding: 1rem;
+   
+  }
+  
+  .OGusers li {
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  .OGrealz li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/Button.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.button1 {
+  font: inherit;
+  border: 1px solid #4f005f;
+  background: black;
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+ 
+  
+}
+
+.button:hover,
+.button:active {
+  background: #791188;
+  border-color: #741188;
+}
+
+.button:focus {
+  outline: none;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/AddUser.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.input {
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+  
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.buttonHolder {
+  width: 450px;
+  display: flex;
+}
+
+.buttonHolder button {
+  width: 110px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input input {
+  font: inherit;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.input input:focus {
+  outline: none;
+  border-color: #fbf2f2;
+}
+
+.adding {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/components/Events.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+body { 
+  background-color: #f8f8fa;
+}
+
+.OGevents {
+    padding: 50px;
+    text-align: center;
+    
+  }
+  
+  .OGevent-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .OGevent-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .OGrealz {
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    background-color: none;
+    padding-inline-start: 0;
+ 
+}
+
+.OGformz {
+  background: lightgray;
+  border-radius: 10px;
+  color: black;
+  margin: 0;
+}
+
+.OGrealz ul {
+  padding-inline-start: 0;
+}
+
+  
+  .OGeventsort {
+    display: flex;
+    justify-content: center;
+  }
+
+  .OGeventsort select {
+    margin-left: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: #f0f1f5;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .OGUE {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+
+  }
+
+  .OGpurp {
+    margin-left: 10px;
+    color: #7a4aef;
+    font-weight: bold;
+  }
+
+  .OGeventholder {
+    background-color: none;
+    width: 100%;
+    height: 300px;
+    margin-left: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+
+  
+  .OGusers-list-container {
+    max-height: 330px; 
+    overflow-y: auto; 
+    padding: 10px; 
+    border: none;
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+  }
+  
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/components/Footer.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+footer {
+    background: #0f107a;
+    color: white;
+    height: 450px;
+   
+    margin-left: -10px;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  
+.cta {
+  width: 350px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cta p {
+  margin-top: -15px;
+  margin-left: 80px;
+
+}
+
+.cta h1 {
+  padding-top: 15px;
+  margin-left: 80px;
+
+
+}
+
+.couchimg {
+  width: 400px;
+  height: 200px;
+  
+}
+
+  .cta button {
+    color: white;
+    background-color: #7848f4;
+    border: none;
+    border-radius: 5px;
+    width: 260px;
+    margin-left: 80px;
+    height: 30px;
+    
+  }
+
+  .subscribe {
+    margin-top: 30px;
+  }
+
+  .subscribe input {
+    margin-right: 20px;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .subscribe button {
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #7848f4;
+    color: white;
+  }
+
+  .connect {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .connect p {
+   
+    margin-right: 30px;
+  }
+
+  .line {
+    height: 2px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 20px;
+  }
+
+  .Cbottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .lang {
+    display: flex;
+    margin-left: 95px;
+    
+  }
+
+  .lang div {
+    margin-right: 20px;
+
+   
+  }
+
+  .social {
+    display: flex;
+    margin-top: -10px;
+    
+  }
+
+  
+
+  .foot-image1 {
+    width: 50px;
+    height: 50px;
+  }
+  .foot-image2 {
+    width: 70px;
+    height: 70px;
+    margin-top: -10px;
+  }
+  .foot-image3 {
+    width: 43px;
+    height: 43px;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+
+  .copy {
+    margin-right: 95px;
+  }
+  
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/component/Hdr.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+nav { 
+    background-color: #f8f8fa;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.middleHdr {
+    
+    display: flex;
+   
+    
+    
+}
+
+.navba {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.green {
+    margin-top: 10px;
+    margin-left: 40px;
+    
+}
+
+.green1 {
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
+
+.green2 {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+   
+    
+}
+
+.middleBut {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoeh {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.hive {
+    margin-left: 5px;
+    color: #7f4ee6;
+}
+
+.green button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.green1 button {
+    width: 100px;
+    height: 40px;
+    background-color:#7f4ee6;
+    color: white;
+    border-radius: 5px;
+}
+
+.green2 button {
+    width: 100px;
+    height: 40px;
+    
+    border-radius: 5px;
+}
+
+
+
