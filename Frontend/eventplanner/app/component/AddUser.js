@@ -68,26 +68,26 @@ const AddUser = ({ onAddUser }) => {
         <input
           type="time"
           value={startTime}
-          onChange={(e) => setStartTime(e.target.value)} // Corrected
+          onChange={(e) => setStartTime(e.target.value)} 
         />
         <label>End Time:</label>
         <input
           type="time"
           value={endTime}
-          onChange={(e) => setEndTime(e.target.value)} // Corrected
+          onChange={(e) => setEndTime(e.target.value)} 
         />
         <label>Event Image URL:</label>
         <input
           type="url"
           value={eventImg}
-          onChange={(e) => seteventImg(e.target.value)} // Corrected
+          onChange={(e) => seteventImg(e.target.value)} 
         />
 
         <label>Is It Online?:</label>
         <input
           type="checkbox"
           value={Online}
-          onChange={(e) => setOnline(e.target.checked)} // Corrected
+          onChange={(e) => setOnline(e.target.checked)}
         />
         <div className='buttonHolder'>
           <Button className="subz" type="submit">Add Event</Button>

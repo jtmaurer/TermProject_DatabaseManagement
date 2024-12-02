@@ -119,7 +119,7 @@ const AddEvent = () => {
             <div className="Admiddle33">
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">Error: {error}</p>}
-                {success && <p className="success">Event added successfully!</p>}
+                {success && <p className="Adsuccess">Event added successfully!</p>}
                 <form onSubmit={handleSubmit} className="AdAddEventForm">
                     <div className="Adform-group">
                     <label htmlFor="eventName">Event Name:</label>

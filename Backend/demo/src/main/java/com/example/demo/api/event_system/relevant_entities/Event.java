@@ -155,7 +155,7 @@ public class Event {
         this.venue_id = venue_id;
     }
 
-    // Optional: toString method for logging and debugging
+
     @Override
     public String toString() {
         return "Event{" +

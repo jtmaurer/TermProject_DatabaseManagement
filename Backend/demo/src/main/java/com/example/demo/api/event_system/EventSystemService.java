@@ -12,6 +12,10 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.Query;
 import java.util.stream.Collectors;
 import com.example.demo.api.event_system.relevant_repositories.PaymentRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -72,6 +76,23 @@ public class EventSystemService {
             return eventRepository.findEventsWithVenue(location, sqlDate, price);
         }
     }
+
+    public int getRemainingCapacity(Integer id) {
+        Event event = eventRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Event not found"));
+
+        Venue venue = event.getVenue_id();
+        if (venue == null) {
+            throw new IllegalStateException("Venue not associated with the event");
+        }
+
+        long totalTicketsSold = ticketRepository.countByEventId(id);
+        return (int) (venue.getCapacity() - totalTicketsSold);
+    }
+
+
+
+
 
 
 

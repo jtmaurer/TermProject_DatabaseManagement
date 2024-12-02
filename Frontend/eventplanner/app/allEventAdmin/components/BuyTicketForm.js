@@ -46,9 +46,9 @@ const BuyTicketForm = ({ onAddUser, eventId, user_id }) => {
 
       const data = await response.json();
 
-      // Assuming the API returns the created order details
+      
       setSuccess("Tickets purchased successfully!");
-      onAddUser(data); // Notify the parent component
+      onAddUser(data); 
 
     } catch (err) {
       setError(err.message);
@@ -108,12 +108,12 @@ const styles = {
   form: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#ffffff", // Added background color
-    padding: "2rem",             // Optional: Add padding for better spacing
-    borderRadius: "8px",         // Optional: Rounded corners
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: Add a subtle shadow
-    maxWidth: "500px",           // Optional: Set a max width
-    margin: "0 auto",            // Optional: Center the form
+    backgroundColor: "#ffffff",
+    padding: "2rem",            
+    borderRadius: "8px",         
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", 
+    maxWidth: "500px",         
+    margin: "0 auto",           
   },
 };
 

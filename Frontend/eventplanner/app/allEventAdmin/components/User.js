@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
+import { useRouter } from 'next/navigation'; 
 import './User.css';
 import BuyTicketForm from './BuyTicketForm';
 import { UserContext } from '../../UserContext';
@@ -19,7 +19,7 @@ const User = ({
 }) => {
   const [showPurchaseForm, setShowPurchaseForm] = useState(false);
   const router = useRouter();
-  const { user } = useContext(UserContext); // Assume `user` is an object like { id: 1, name: 'John' }
+  const { user } = useContext(UserContext); 
 
   const formatTime = (time) => {
     if (!time) return '';
@@ -37,7 +37,7 @@ const User = ({
   };
 
   const handleImageClick = () => {
-    router.push(`/event/${id}`); // Pass only the event ID
+    router.push(`/event/${id}`); 
   };
 
   return (

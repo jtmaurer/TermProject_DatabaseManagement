@@ -8,6 +8,6 @@ import com.example.demo.api.event_system.relevant_entities.Orders;
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Integer> {
 
-    // Use the correct field name
+
     Payment findByOrder(Orders order);
 }

@@ -44,7 +44,7 @@ public class Orders {
     @JoinColumn(name = "event_id", referencedColumnName = "event_id")
     private Event event_id;
 
-    @OneToOne(mappedBy = "order") // Match the field name in Payment entity
+    @OneToOne(mappedBy = "order")
     private Payment payment;
     /**
      * Default constructor required for JPA entity instantiation.

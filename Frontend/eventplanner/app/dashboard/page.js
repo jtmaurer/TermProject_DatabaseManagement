@@ -11,15 +11,15 @@ const AccountPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('User in AccountPage:', user); // Debugging log
+    console.log('User in AccountPage:', user); 
     if (!user) {
       router.push('/login');
     }
   }, [user, router]);
 
   const handleLogout = () => {
-    logout(); // Call the logout function
-    router.push('/login'); // Redirect to login page
+    logout(); 
+    router.push('/login'); 
   };
 
   return (
@@ -43,7 +43,7 @@ const AccountPage = () => {
               </div>
               <div className="dashprofile-info">
                 <h2>Username: {user?.username || 'Not Available'}</h2>
-                <p>Email: {user?.email || 'Email not available'}</p> {/* Debug for email */}
+                <p>Email: {user?.email || 'Email not available'}</p> 
               </div>
             </div>
 

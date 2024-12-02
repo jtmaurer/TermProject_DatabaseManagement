@@ -17,7 +17,7 @@ const AccountPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('User in AccountPage:', user); // Debugging log
+    console.log('User in AccountPage:', user); 
     if (!user) {
       router.push('/login');
     }

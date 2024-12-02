@@ -45,7 +45,7 @@ body {
 .Admiddle33 {
     background-color: #CCCCFF;
     width: 100%;
-    height: 220px;
+    height: 230px;
     border-radius: 15px;
     margin: 10px 5px 0;
     padding: 20px;
@@ -61,12 +61,17 @@ body {
     
 }
 
-
+.Adsuccess {
+    margin: 0;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
 
 .Adform-group {
     
     display: flex;
     justify-content: center;
+    margin-bottom: 5px;
     
    
 }
@@ -103,7 +108,7 @@ body {
     border: none;
     color: white;
     background-color: #a382ea;
-    margin-top: 3px;
+    margin-top: 0px;
 }
 
 .Adform-group textarea {
@@ -120,7 +125,7 @@ body {
 
 .addingAd {
     width: 500px;
-    margin-top: 15px;
+    margin-top: 10px;
     height: 30px;
     color: white;
     background-color: #a382ea;

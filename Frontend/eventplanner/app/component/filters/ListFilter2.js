@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Filter = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
-  const [price, setPrice] = useState(""); // Initialize as string for controlled input
+  const [price, setPrice] = useState(""); 
   const [event_date, setEventDate] = useState("");
 
   const handleSubmit = (e) => {
@@ -15,9 +15,9 @@ const Filter = ({ onFilterChange }) => {
     const finalPrice = !isNaN(parsedPrice) ? parsedPrice : null;
 
     onFilterChange({
-      location,             // string
-      price: finalPrice,    // integer or null
-      event_date,           // string
+      location,            
+      price: finalPrice,    
+      event_date,           
       user_ordered_events: false
     });
   };

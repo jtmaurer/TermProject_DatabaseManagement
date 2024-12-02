@@ -10,15 +10,15 @@ const Hdr = () => {
     const { user, logout} = useContext(UserContext);
 
     useEffect(() => {
-        console.log('User in AccountPage:', user); // Debugging log
+        console.log('User in AccountPage:', user); 
         if (!user) {
           router.push('/login');
         }
       }, [user, router]);
 
       const handleLogout = () => {
-        logout(); // Call the logout function
-        router.push('/login'); // Redirect to login page
+        logout(); 
+        router.push('/login'); 
       };
     return (
         <nav>

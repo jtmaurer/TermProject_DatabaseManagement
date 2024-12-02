@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Filter = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
-  const [price, setPrice] = useState(""); // Initialize as string for controlled input
+  const [price, setPrice] = useState(""); 
   const [event_date, setEventDate] = useState("");
 
   const handleSubmit = (e) => {

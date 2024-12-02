@@ -57,6 +57,7 @@ const EventDetails = () => {
         const data = await response.json();
         setEvent(data);
         setLoading(false);
+        console.log(data);
       } catch (error) {
         console.error('Error fetching event details:', error);
         setError(error.message);
@@ -80,7 +81,9 @@ const EventDetails = () => {
     price,
     online,
     venue_name,
+    capacity,
     image,
+    location,
   } = event;
 
   return (
@@ -118,7 +121,8 @@ const EventDetails = () => {
               Time: {start_time} - {end_time}
             </p>
             <p>Price: ${price}</p>
-            <p>{online ? 'Online Event' : `Venue: ${venue_name}`}</p>
+            <p> Location: {event.location}</p>
+            <p>{online ? 'Online Event' : `Venue: ${venue_name}, Location: ${location}, Capacity: ${capacity}`}</p>
           </div>
           <h1>Book Tickets</h1>
           <div className='buttonholder'>

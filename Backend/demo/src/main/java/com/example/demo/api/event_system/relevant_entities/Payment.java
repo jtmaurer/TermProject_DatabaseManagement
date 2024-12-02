@@ -19,13 +19,13 @@ public class Payment {
 
     @OneToOne
     @JoinColumn(name = "order_id", referencedColumnName = "order_id")
-    private Orders order; // Ensure field name is consistent with mappedBy in Order
+    private Orders order;
 
 
     // Default constructor
     public Payment() {}
 
-    // Parameterized constructor
+
     public Payment(Integer payment_id, String payment_method, Double amount, Orders order) {
         this.payment_id = payment_id;
         this.payment_method = payment_method;

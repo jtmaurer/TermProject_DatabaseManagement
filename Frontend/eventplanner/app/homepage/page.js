@@ -16,7 +16,7 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('User in AccountPage:', user); // Debugging log
+    console.log('User in AccountPage:', user); 
     if (!user) {
       router.push('/login');
     }
@@ -25,9 +25,7 @@ const Home = () => {
   return (
     <div>
       <Hdr />
-      <div className='homepageList'>
-        <Hero />
-      </div>
+      
      
       
       <Events />

@@ -1,9 +1,9 @@
-'use client';
 import React, { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
+import { useRouter } from 'next/navigation';
 import './User.css';
 import BuyTicketForm from './BuyTicketForm';
 import { UserContext } from '../../UserContext';
+import ReactModal from 'react-modal';
 
 const User = ({
   id,
@@ -12,14 +12,34 @@ const User = ({
   date,
   startTime,
   endTime,
-  price, // Ensure `price` is passed as a prop
+  price,
   venue,
   online,
   image,
 }) => {
   const [showPurchaseForm, setShowPurchaseForm] = useState(false);
+  const [remainingCapacity, setRemainingCapacity] = useState(null);
   const router = useRouter();
-  const { user } = useContext(UserContext); // Assume `user` is an object like { id: 1, name: 'John' }
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    const fetchRemainingCapacity = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/events/${id}/remaining-capacity`
+        );
+        if (!response.ok) {
+          throw new Error('Failed to fetch remaining capacity');
+        }
+        const data = await response.json();
+        setRemainingCapacity(data);
+      } catch (error) {
+        console.error('Error fetching remaining capacity:', error);
+      }
+    };
+
+    fetchRemainingCapacity();
+  }, [id]);
 
   const formatTime = (time) => {
     if (!time) return '';
@@ -37,18 +57,22 @@ const User = ({
   };
 
   const handleImageClick = () => {
-    router.push(`/event/${id}`); // Pass only the event ID
+    router.push(`/event/${id}`);
   };
 
   return (
     <div className="Alllist11">
-      <div className="Allimgcontainer">
+      <div
+        className="Allimgcontainer"
+        {...(remainingCapacity !== null && remainingCapacity > 0
+          ? { onClick: handleImageClick }
+          : {})}
+      >
         {image && (
           <img
             className="AllEvent-image"
             src={image}
             alt={Eventname || 'Event Image'}
-            onClick={handleImageClick} // Navigate to the details page on click
           />
         )}
         <div className="Allprice">
@@ -56,18 +80,33 @@ const User = ({
         </div>
       </div>
 
-      <div className="AlleventTitle">
+      <div
+        className="AlleventTitle"
+        {...(remainingCapacity !== null && remainingCapacity > 0
+          ? { onClick: handleImageClick }
+          : {})}
+      >
         <h3 className="Allold11">{Eventname}</h3>
       </div>
 
-      <div className="AlleventTitle2">
+      <div
+        className="AlleventTitle2"
+        {...(remainingCapacity !== null && remainingCapacity > 0
+          ? { onClick: handleImageClick }
+          : {})}
+      >
         <h3 className="Allold11">{date}:</h3>
         <h3 className="Allold11">{formatTime(startTime)}</h3>
         <h3 className="Allold11"> - </h3>
         <h3 className="Allold11">{formatTime(endTime)}</h3>
       </div>
 
-      <div className="AlleventDetails">
+      <div
+        className="AlleventDetails"
+        {...(remainingCapacity !== null && remainingCapacity > 0
+          ? { onClick: handleImageClick }
+          : {})}
+      >
         <p className="Allold11s">
           {online
             ? 'Online Event - Attend Anywhere'
@@ -75,20 +114,72 @@ const User = ({
         </p>
       </div>
 
-      <button
-        className="AllpurchaseButton"
-        onClick={() => setShowPurchaseForm(!showPurchaseForm)}
-      >
-        {showPurchaseForm ? 'Cancel' : 'Buy Tickets'}
-      </button>
+      {remainingCapacity !== null && remainingCapacity <= 0 ? (
+        <p
+          className="SoldOutText"
+          style={{ color: 'red', fontWeight: 'bold', textAlign: 'center', margin: '0' }}
+        >
+          Sold Out
+        </p>
+      ) : (
+        <button
+          className="AllpurchaseButton"
+          onClick={() => setShowPurchaseForm(!showPurchaseForm)}
+        >
+          {showPurchaseForm ? 'Cancel' : 'Buy Tickets'}
+        </button>
+      )}
 
-      {showPurchaseForm && (
-        <BuyTicketForm
-          eventId={id}
-          user_id={user?.id} // Pass the user ID
-          price={price} // Pass the price
-          onAddUser={(order) => console.log('Order created:', order)}
-        />
+      {remainingCapacity > 0 && (
+        <ReactModal
+          isOpen={showPurchaseForm}
+          onRequestClose={() => setShowPurchaseForm(false)}
+          contentLabel="Buy Tickets"
+          ariaHideApp={false}
+          style={{
+            overlay: {
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',  
+            },
+            content: {
+              position: 'fixed',  
+              top: '50%',  
+              left: '50%',  
+              transform: 'translate(-50%, -50%)',  
+              maxWidth: '600px',
+              width: '90%',  
+              maxHeight: '90vh',  
+              overflow: 'auto',  
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            },
+          }}
+        >
+          <h2>Buy Tickets</h2>
+          <button
+            onClick={() => setShowPurchaseForm(false)}
+            style={{
+              position: 'absolute',
+              top: '10px',
+              right: '10px',
+              background: 'transparent',
+              border: 'none',
+              fontSize: '16px',
+              cursor: 'pointer',
+            }}
+          >
+            &times;
+          </button>
+          <BuyTicketForm
+            eventId={id}
+            user_id={user?.id}
+            price={price}
+            onAddUser={(order) => {
+              console.log('Order created:', order);
+              setShowPurchaseForm(false);
+            }}
+          />
+        </ReactModal>
       )}
     </div>
   );

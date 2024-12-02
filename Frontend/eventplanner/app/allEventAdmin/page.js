@@ -4,7 +4,7 @@ import React, { useEffect, useState , useContext} from 'react';
 import './page.css';
 import { useRouter } from 'next/navigation';
 import Hero2 from './components/Hero';
-import Events from '../component/filters/FilteredList';
+import Events from '../component/filters/FilteredList4';
 import EventList from '../component/filters/FilteredList';
 import Footer from '../component/components/Footer';
 import Hdr from '../component/Hdr3';
@@ -16,7 +16,7 @@ const Home = () => {
   const router = useRouter();
   const { user, logout} = useContext(UserContext);
   useEffect(() => {
-    console.log('User in AccountPage:', user); // Debugging log
+    console.log('User in AccountPage:', user); 
     if (!user) {
       router.push('/login');
     }

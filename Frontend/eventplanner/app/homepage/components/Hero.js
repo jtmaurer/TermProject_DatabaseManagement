@@ -5,7 +5,7 @@ import './Hero.css';
 
 const Hero = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
-  const [price, setPrice] = useState(""); // Initialize as string for controlled input
+  const [price, setPrice] = useState(""); 
   const [event_date, setEventDate] = useState("");
 
   const handleSubmit = (e) => {
@@ -55,12 +55,12 @@ const Hero = ({ onFilterChange }) => {
             <div className='HOGselecter'>
               <label htmlFor="price">Max Price:</label>
                 <input
-                  type="number" // Changed to number for numeric input
+                  type="number"
                   id="price"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                   placeholder="Enter Max Price"
-                  min="0" // Optional: Prevent negative numbers
+                  min="0" 
                 />
             </div>
 
@@ -71,7 +71,7 @@ const Hero = ({ onFilterChange }) => {
             <div className='HOGselecter'>
               <label htmlFor="event_date">Date:</label>
                 <input
-                  type="date" // Changed to date for better date handling
+                  type="date" 
                   id="event_date"
                   value={event_date}
                   onChange={(e) => setEventDate(e.target.value)}

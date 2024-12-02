@@ -1,7 +1,6 @@
 // FilterAndList.jsx
 import React, { useState } from "react";
-import Filter from "./ListFilter"; // Ensure the path is correct
-import Hero from "@/app/homepage/components/Hero";
+import Hero from "../components/Hero"; // Ensure the path is correct
 import EventList from "../../allEvents/components/Events";
 
 const FilterAndList = () => {
@@ -18,7 +17,8 @@ const FilterAndList = () => {
 
   return (
     <div className="events-page">
-      <Hero onFilterChange={handleFilterChange} />
+     
+      
       <EventList filters={filters} />
     </div>
   );

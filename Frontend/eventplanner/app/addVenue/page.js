@@ -20,7 +20,7 @@ const AddVenue = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('User in AccountPage:', user); // Debugging log
+    console.log('User in AccountPage:', user); 
     if (!user) {
       router.push('/login');
     }
@@ -82,7 +82,7 @@ const AddVenue = () => {
                 <div className="Vmiddle33">
                     {loading && <p>Loading...</p>}
                     {error && <p className="error">Error: {error}</p>}
-                    {success && <p className="success">Venue added successfully!</p>}
+                    {success && <p className="Vsuccess">Venue added successfully!</p>}
                     <form onSubmit={handleSubmit} className="VAddVenueForm">
                         <div className="Vform-group">
                         <label htmlFor="venueName">Venue Name:</label>

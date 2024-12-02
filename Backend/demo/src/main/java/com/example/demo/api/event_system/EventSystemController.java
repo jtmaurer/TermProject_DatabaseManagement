@@ -82,6 +82,8 @@ public class EventSystemController {
             Venue venue = event.getVenue_id();
             response.put("venue_name", venue.getVenue_name());
             response.put("venue_image", venue.getImage());
+            response.put("location", venue.getLocation());
+            response.put("capacity", venue.getCapacity());
         } else {
             response.put("venue_name", null);
             response.put("venue_image", null);
@@ -108,6 +110,13 @@ public class EventSystemController {
     ) {
         return eventSystemService.createOrder(order_date, number_of_tickets, user_id, event_id, amount, payment_method);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/events/{id}/remaining-capacity")
+    public int getRemainingCapacity(@PathVariable Integer id) {
+        return eventSystemService.getRemainingCapacity(id);
+    }
+
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/venues")

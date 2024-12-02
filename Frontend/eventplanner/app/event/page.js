@@ -70,13 +70,17 @@ const Home = () => {
                 overlay: {
                   backgroundColor: 'rgba(0, 0, 0, 0.75)',
                 },
-                content: {
-                  width: '500px',
-                  height: '500px',
-                  margin: 'auto',
-                  borderRadius: '10px',
+                position: 'absolute', 
+                  top: `${window.scrollY + window.innerHeight / 2}px`, 
+                  left: '50%', 
+                  transform: 'translate(-50%, -50%)', 
+                  maxWidth: '600px',
+                  width: '90%', 
+                  maxHeight: '415px', 
+                  overflow: 'auto', 
                   padding: '20px',
-                },
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               }}
             >
               <div className='eventlexz'>
@@ -115,13 +119,17 @@ const Home = () => {
                 overlay: {
                   backgroundColor: 'rgba(0, 0, 0, 0.75)',
                 },
-                content: {
-                  width: '500px',
-                  height: '500px',
-                  margin: 'auto',
-                  borderRadius: '10px',
+                position: 'absolute', 
+                  top: `${window.scrollY + window.innerHeight / 2}px`, 
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)', 
+                  maxWidth: '600px',
+                  width: '90%', 
+                  maxHeight: '415px', 
+                  overflow: 'auto', 
                   padding: '20px',
-                },
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               }}
             >
               <div className='eventlexz'>

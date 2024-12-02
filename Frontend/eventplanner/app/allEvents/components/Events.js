@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Model from 'react-modal';
 import UsersList from './UsersList';
 import BuyTicketForm from './BuyTicketForm';
+import ReactModal from 'react-modal';
 import './Events.css';
 
 const Events = ({ filters }) => {
@@ -59,7 +60,7 @@ const Events = ({ filters }) => {
         online: event.online,
       }));
   
-      setEvents(normalizedEvents); // Update state
+      setEvents(normalizedEvents); 
       console.log("Normalized events:", normalizedEvents);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -76,8 +77,8 @@ const Events = ({ filters }) => {
   // Fetch events when the component loads or when filters change
   useEffect(() => {
     fetchEvents();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(filters)]); // Dependency on filters
+    
+  }, [JSON.stringify(filters)]); 
 
   const handleDelete = (id) => {
     setEvents((prevEvents) => prevEvents.filter((event) => event.event_id !== id));

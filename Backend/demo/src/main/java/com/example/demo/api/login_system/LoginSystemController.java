@@ -83,12 +83,12 @@ public class LoginSystemController {
                     .body(Map.of("message", "Password incorrect."));
         }
 
-        System.out.println("Successful login: " + account.getEmail()); // Debugging log
+        System.out.println("Successful login: " + account.getEmail());
 
         return ResponseEntity.ok(Map.of(
                 "userId", account.getUserId(),
                 "username", account.getUsername(),
-                "email", account.getEmail() // Ensure email is included
+                "email", account.getEmail()
         ));
     }
 
@@ -103,7 +103,7 @@ public class LoginSystemController {
 
         return ResponseEntity.ok(Map.of(
                 "username", account.getUsername(),
-                "email", account.getEmail() // Include email in response
+                "email", account.getEmail()
         ));
     }
 

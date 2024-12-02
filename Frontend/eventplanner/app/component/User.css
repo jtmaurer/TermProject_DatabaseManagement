@@ -13,6 +13,12 @@
   
 }
 
+.OGpurchaseButton {
+  background-color: #7848f4;
+  border-radius: 20px;
+  color: white;
+}
+
 .OGprice {
   background-color: #fffffb;
   width: 40px;

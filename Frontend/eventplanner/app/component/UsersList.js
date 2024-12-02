@@ -13,7 +13,7 @@ const UsersList = ({ users, onDelete }) => {
       <ul className="OGrealz">
         {users.map((user, index) => (
           <User
-            key={user.event_id || index} // Use event_id from the backend
+            key={user.event_id || index} 
             id={user.event_id}
             Eventname={user.event_name}
             description={user.description}
@@ -22,8 +22,8 @@ const UsersList = ({ users, onDelete }) => {
             endTime={user.end_time}
             online={user.online}
             price={user.price}
-            venue={user.venue_name || 'Unknown Venue'} // Use venue_name directly
-            image={user.image} // Pass the image URL
+            venue={user.venue_name || 'Unknown Venue'} 
+            image={user.image} 
             onDelete={onDelete}
           />
         ))}
