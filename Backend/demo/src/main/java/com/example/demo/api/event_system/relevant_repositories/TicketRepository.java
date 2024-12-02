@@ -14,5 +14,12 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 
     @Query("SELECT t FROM Ticket t JOIN t.order_id o WHERE o.user_id.id = :userId")
     List<Ticket> findByUserId(@Param("userId") Integer userId);
+
+    @Query("SELECT t FROM Ticket t JOIN t.order_id o WHERE o.event_id.event_id = :eventId")
+    List<Ticket> findByEventId(@Param("eventId") Integer eventId);
 }
+
+
+
+
 

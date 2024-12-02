@@ -2,31 +2,24 @@ package com.example.demo.api.event_system;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
-import java.util.Map;
-import org.springframework.data.repository.query.Param;
-import org.springframework.data.jpa.repository.Query;
-import java.util.stream.Collectors;
-import com.example.demo.api.event_system.relevant_entities.Event;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
-import com.example.demo.api.event_system.relevant_repositories.EventRepository;
-import java.util.HashMap;
-import com.example.demo.api.event_system.relevant_entities.Venue;
-import com.example.demo.api.event_system.relevant_repositories.VenueRepository;
+import org.springframework.web.bind.annotation.RestController;
 
-
-
-
+import com.example.demo.api.event_system.relevant_entities.Event;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketModelSolo;
+import com.example.demo.api.event_system.relevant_entities.Venue;
+import com.example.demo.api.event_system.relevant_repositories.EventRepository;
+import com.example.demo.api.event_system.relevant_repositories.VenueRepository;
 
 @RestController
 public class EventSystemController {
@@ -37,12 +30,12 @@ public class EventSystemController {
     private VenueRepository venueRepository;
 
     @Autowired
+    private EventRepository eventRepository;
+
+    @Autowired
     public EventSystemController(EventSystemService eventSystemService) {
         this.eventSystemService = eventSystemService;
     }
-
-    @Autowired
-    private EventRepository eventRepository;
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/events")
@@ -75,7 +68,6 @@ public class EventSystemController {
         Event event = eventRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Event not found"));
 
-        // Construct a response map
         Map<String, Object> response = new HashMap<>();
         response.put("event_id", event.getEvent_id());
         response.put("event_name", event.getEvent_name());
@@ -86,7 +78,6 @@ public class EventSystemController {
         response.put("price", event.getPrice());
         response.put("online", event.getOnline());
 
-        // Check if Venue exists and add image
         if (event.getVenue_id() != null) {
             Venue venue = event.getVenue_id();
             response.put("venue_name", venue.getVenue_name());
@@ -111,9 +102,11 @@ public class EventSystemController {
             @RequestParam(required = true) Date order_date,
             @RequestParam(required = true) Integer number_of_tickets,
             @RequestParam(required = true) Integer user_id,
-            @RequestParam(required = true) Integer event_id
+            @RequestParam(required = true) Integer event_id,
+            @RequestParam(required = false) Double amount,
+            @RequestParam(required = false) String payment_method
     ) {
-        return eventSystemService.createOrder(order_date, number_of_tickets, user_id, event_id);
+        return eventSystemService.createOrder(order_date, number_of_tickets, user_id, event_id, amount, payment_method);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")

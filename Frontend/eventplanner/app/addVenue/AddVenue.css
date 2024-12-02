@@ -1,6 +1,6 @@
 body {
     background-color: #f8f8fa;
-    color: white;
+    color: black;
 }
 
 .Vpager {
@@ -9,15 +9,18 @@ body {
     background-color: #a382ea;
     margin: 1% auto;
     width: 80%;
-    height: 397px;
+    height: 405px;
     border-radius: 25px;
 }
 
+.vFoot {
+    width: 100%;
+}
 
 
 .Vmiddlez {
     background-color: #a382ea;
-    height: 340px;
+    height: 345px;
     width: 86.2%;
     text-align: center;
     border-radius: 25px;
@@ -51,20 +54,20 @@ body {
     padding: 20px;
 }
 
-.form-group label {
-   
+.Vform-group label {
+   display: contents;
     font-size: 30px;
     width: 170px !important;
-   
+    
     
 }
 
-.form-group {
+.Vform-group {
     margin-bottom: 10px;
    
 }
 
-.form-group input {
+.Vform-group input {
     font-size: 30px;
     border: none;
     border-radius: 20px;
@@ -223,6 +226,4 @@ body {
     background-color: #8b6cc6;
 }
 
-.Vstuff {
-    
-}
+

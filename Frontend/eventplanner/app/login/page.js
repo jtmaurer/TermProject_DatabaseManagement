@@ -19,31 +19,35 @@ const LoginUp = () => {
       setError('Please fill in all fields.');
       return;
     }
-
+  
     setLoading(true);
-
+  
     try {
       const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim(), password: password.trim() }),
       });
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Login failed');
       }
-
+  
       const data = await response.json();
-
-      // Set the user in context
-      setUser({ id: data.userId, username: data.username });
-
+  
+      // Set the user in context, including the email
+      setUser({
+        id: data.userId,
+        username: data.username,
+        email: data.email, // Include email
+      });
+  
       // Redirect based on username
       if (data.username === 'admin') {
         router.push('/admin');
       } else {
-        router.push('/dashboard');
+        router.push('/homepage');
       }
     } catch (err) {
       setError(err.message);
@@ -51,6 +55,7 @@ const LoginUp = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="loginstuff">

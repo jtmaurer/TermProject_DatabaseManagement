@@ -12,7 +12,7 @@ const User = ({
   date,
   startTime,
   endTime,
-  price,
+  price, // Ensure `price` is passed as a prop
   venue,
   online,
   image,
@@ -85,7 +85,8 @@ const User = ({
       {showPurchaseForm && (
         <BuyTicketForm
           eventId={id}
-          user_id={user?.id} // Pass only the `id` from `user`
+          user_id={user?.id} // Pass the user ID
+          price={price} // Pass the price
           onAddUser={(order) => console.log('Order created:', order)}
         />
       )}

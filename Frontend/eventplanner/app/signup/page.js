@@ -52,7 +52,7 @@ const Signup = () => {
   return (
     <div className="signstuff">
       <div className="signLeft">
-        <div className="go-to-log">
+        <div className="signgo-to-log">
           <b>Welcome back</b>
           <button onClick={() => router.push('/login')}>Login</button>
         </div>

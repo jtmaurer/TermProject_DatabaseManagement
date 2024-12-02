@@ -3,6 +3,7 @@
   \**********************************************************************************************************************************************************************************************************************************************************/
 body {
     background-color: #f8f8fa !important;
+    margin: 0 auto;
 }
 
 
@@ -36,8 +37,8 @@ body {
 }
 
 .OGfoot {
-    width: 100.4%;
-    background-color: orange;
+    
+    background-color: #0f107a;
 }
 
 .OGhoriline {
@@ -598,8 +599,8 @@ footer {
     background: #0f107a;
     color: white;
     height: 450px;
-   
-    margin-left: -10px;
+    
+    
     margin-bottom: -10px;
     text-align: center;
   }

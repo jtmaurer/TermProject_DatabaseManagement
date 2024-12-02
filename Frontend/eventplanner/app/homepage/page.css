@@ -1,6 +1,10 @@
 body {
-    background-color: #f8f8fa;
+    background-color: #f8f8fa !important;
+    padding: 0;
+    margin: 0 auto;
 }
+
+
 
 
 .OGHomePageText {
@@ -32,9 +36,13 @@ body {
     margin-top: 20px;
 }
 
-.OGfoot {
-    width: 100.4%;
-    background-color: orange;
+
+
+.homefoot {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
 }
 
 .OGhoriline {

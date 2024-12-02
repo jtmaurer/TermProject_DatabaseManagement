@@ -1,8 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import './AddVenue.css';
 import Hdr from '../component/Hdr3';
+import { UserContext } from '../UserContext';
 import Footer from '../component/components/Footer';
+import { useRouter } from 'next/navigation';
+
 
 
 const AddVenue = () => {
@@ -13,6 +16,15 @@ const AddVenue = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const { user, logout} = useContext(UserContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log('User in AccountPage:', user); // Debugging log
+    if (!user) {
+      router.push('/login');
+    }
+  }, [user, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,12 +79,12 @@ const AddVenue = () => {
                     </div>
                     
                 
-                <div className="middle33">
+                <div className="Vmiddle33">
                     {loading && <p>Loading...</p>}
                     {error && <p className="error">Error: {error}</p>}
                     {success && <p className="success">Venue added successfully!</p>}
-                    <form onSubmit={handleSubmit} className="AddVenueForm">
-                        <div className="form-group">
+                    <form onSubmit={handleSubmit} className="VAddVenueForm">
+                        <div className="Vform-group">
                         <label htmlFor="venueName">Venue Name:</label>
                         <input
                             type="text"
@@ -82,7 +94,7 @@ const AddVenue = () => {
                             required
                         />
                         </div>
-                        <div className="form-group">
+                        <div className="Vform-group">
                         <label htmlFor="location">Location:</label>
                         <input
                             type="text"
@@ -92,7 +104,7 @@ const AddVenue = () => {
                             required
                         />
                         </div>
-                        <div className="form-group">
+                        <div className="Vform-group">
                         <label htmlFor="capacity">Capacity:</label>
                         <input
                             type="number"
@@ -102,7 +114,7 @@ const AddVenue = () => {
                             required
                         />
                         </div>
-                        <div className="form-group">
+                        <div className="Vform-group">
                         <label htmlFor="image">Image URL:</label>
                         <input
                             type="text"
@@ -124,8 +136,10 @@ const AddVenue = () => {
 
 
         </div>
+        <div className='vFoot'>
+          <Footer />
+        </div>
         
-        <Footer />
     </div>
     
    

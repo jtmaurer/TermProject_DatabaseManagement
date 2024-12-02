@@ -12,22 +12,24 @@ body {
 
 .signLeft {
   width: 50%;
-  height: 1049px;
+  height: 937px;
   background-image: url('https://cdn.paris.fr/paris/2019/07/24/huge-41b950ab4de6f1fa5310b2e4ea4a47f2.jpeg');
   background-size: cover; 
   background-position: center; 
 }
 
-.go-to-log {
+.signgo-to-log {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
   font-size: 50px;
   margin-top: 350px;
   color: white;
-  width: 350px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
-.go-to-log button {
+
+.signgo-to-log button {
   margin-left: 106px;
   margin-right: 106px;
   width: 150px;

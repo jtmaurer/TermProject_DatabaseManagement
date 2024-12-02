@@ -1,6 +1,6 @@
 body {
     background-color: #f8f8fa;
-    color: black;
+    color: black !important;
 }
 
 .Adpager {
@@ -9,7 +9,7 @@ body {
     background-color: #a382ea;
     margin: 1% auto;
     width: 80%;
-    height: 397px;
+    height: 405px;
     border-radius: 25px;
 }
 
@@ -17,7 +17,7 @@ body {
 
 .Admiddlez {
     background-color: #a382ea;
-    height: 340px;
+    height: 345px;
     width: 86.2%;
     text-align: center;
     border-radius: 25px;
@@ -51,7 +51,7 @@ body {
     padding: 20px;
 }
 
-.form-group label {
+.Adform-group label {
    
     font-size: 15px;
     width: 170px !important;
@@ -63,15 +63,15 @@ body {
 
 
 
-.form-group {
-    margin-bottom: 6px;
+.Adform-group {
+    
     display: flex;
     justify-content: center;
     
    
 }
 
-.form-group input {
+.Adform-group input {
     display: flex;
     justify-content: left;
     font-size: 15px;
@@ -84,7 +84,7 @@ body {
     
 }
 
-#venue {
+#venue2 {
     display: flex;
     justify-content: left;
     font-size: 15px;
@@ -106,7 +106,7 @@ body {
     margin-top: 3px;
 }
 
-.form-group textarea {
+.Adform-group textarea {
     display: flex;
     justify-content: left;
     font-size: 15px;
@@ -267,6 +267,7 @@ body {
     background-color: #8b6cc6;
 }
 
-.Adstuff {
-    
+.addEFoot {
+    width: 100% !important;
 }
+

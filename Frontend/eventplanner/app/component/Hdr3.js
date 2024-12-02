@@ -1,10 +1,25 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useContext } from 'react';
 import './Hdr.css';
 import { useRouter } from 'next/navigation';
+import { UserContext } from '../UserContext';
 
 
 const Hdr = () => {
     const router = useRouter();
+    const { user, logout} = useContext(UserContext);
+
+    useEffect(() => {
+        console.log('User in AccountPage:', user); // Debugging log
+        if (!user) {
+          router.push('/login');
+        }
+      }, [user, router]);
+
+      const handleLogout = () => {
+        logout(); // Call the logout function
+        router.push('/login'); // Redirect to login page
+      };
     return (
         <nav>
             <div className='navba'>
@@ -40,7 +55,7 @@ const Hdr = () => {
             
                 <div className='middleHdr'>
                     <div className='green'>
-                        <button type='button'  onClick={() => router.push('../')}> LogOut </button>
+                        <button type='button'  onClick={handleLogout}> LogOut </button>
                     </div>
                     
                 

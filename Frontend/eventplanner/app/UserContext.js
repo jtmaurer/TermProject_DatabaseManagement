@@ -49,7 +49,7 @@ export const UserProvider = ({ children }) => {
 
   // Method to set the user state
   const setUser = (newUser, newToken) => {
-    setUserState(newUser);
+    setUserState(newUser); // Ensure newUser contains email
     setTokenState(newToken);
   };
 

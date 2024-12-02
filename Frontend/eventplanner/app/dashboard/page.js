@@ -1,114 +1,62 @@
 'use client';
 import './page.css';
-import React, { useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Hdr from '../component/Hdr2';
-import Model from 'react-modal';
 import Footer from '../component/components/Footer';
+import { UserContext } from '../UserContext';
+import { useRouter } from 'next/navigation';
 
 const AccountPage = () => {
-  const [visible, setVisible] = useState(false);
-  const [username, setUsername] = useState('bob');
-  const [profilePic, setProfilePic] = useState('https://i.gyazo.com/4446d7ff66010b8a004b3a94b592e7a3.png');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const { user, logout} = useContext(UserContext);
+  const router = useRouter();
 
-  const handleSaveChanges = () => {
-    if (password !== confirmPassword) {
-      alert('Passwords do not match!');
-      return;
+  useEffect(() => {
+    console.log('User in AccountPage:', user); // Debugging log
+    if (!user) {
+      router.push('/login');
     }
-    // Here you can handle saving changes (currently frontend-only)
-    alert('Profile updated successfully!');
-    setVisible(false);
+  }, [user, router]);
+
+  const handleLogout = () => {
+    logout(); // Call the logout function
+    router.push('/login'); // Redirect to login page
   };
 
   return (
-    <div className="stuff">
+    <div className="dashstuff">
       <Hdr />
-      <div className="pager">
-        <div className="middlez">
-          <div className="middle11">
-            <div className="bordss">
-              <h1 className="bords11">My Account</h1>
+      <div className="dashpager">
+        <div className="dashmiddlez">
+          <div className="dashmiddle11">
+            <div className="dashbordss">
+              <h1 className="dashbords11">My Account</h1>
             </div>
           </div>
 
-          <div className="middle33">
-            <div className="profile-section">
-              <div className="profile-image">
-                <img src={profilePic} alt="Profile" />
+          <div className="dashmiddle33">
+            <div className="dashprofile-section">
+              <div className="dashprofile-image">
+                <img
+                  src={'https://i.gyazo.com/4446d7ff66010b8a004b3a94b592e7a3.png'}
+                  alt="Profile"
+                />
               </div>
-              <div className="profile-info">
-                <h2>Username: {username}</h2>
-                <p>Email: asdf@example.com</p>
+              <div className="dashprofile-info">
+                <h2>Username: {user?.username || 'Not Available'}</h2>
+                <p>Email: {user?.email || 'Email not available'}</p> {/* Debug for email */}
               </div>
             </div>
 
-            <div className="actions">
-              <button className="action-button" onClick={() => setVisible(true)}>
-                Edit Profile
-              </button>
-
-              <Model
-                isOpen={visible}
-                onRequestClose={() => setVisible(false)}
-                ariaHideApp={false}
-                style={{
-                  overlay: { backgroundColor: 'rgba(0, 0, 0, 0.75)' },
-                  content: {
-                    width: '400px',
-                    height: '500px',
-                    margin: 'auto',
-                    borderRadius: '10px',
-                    padding: '20px',
-                  },
-                }}
-              >
-                <div className="modal-header">
-                  <button className="close-button" onClick={() => setVisible(false)}>X</button>
-                  <h2>Edit Profile</h2>
-                </div>
-                <form className="edit-form" onSubmit={(e) => e.preventDefault()}>
-                  <label>Username:</label>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-
-                  <label>Profile Picture URL:</label>
-                  <input
-                    type="text"
-                    value={profilePic}
-                    onChange={(e) => setProfilePic(e.target.value)}
-                  />
-
-                  <label>Password:</label>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-
-                  <label>Confirm Password:</label>
-                  <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-
-                  <button className="action-button" onClick={handleSaveChanges}>
-                    Save Changes
-                  </button>
-                </form>
-              </Model>
-
-              <button className="action-button">Logout</button>
+            <div className="dashactions">
+              <button className="dashaction-button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+      <div className='dashfoot'>
+        <Footer  />
+      </div>
+      
     </div>
   );
 };

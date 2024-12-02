@@ -1,8 +1,11 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import './AddEvent.css';
 import Hdr from '../component/Hdr3';
 import Footer from '../component/components/Footer';
+import { UserContext } from '../UserContext';
+import { useRouter } from 'next/navigation';
+
 
 
 const AddEvent = () => {
@@ -17,6 +20,16 @@ const AddEvent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+
+  const { user, logout} = useContext(UserContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log('User in AccountPage:', user); // Debugging log
+    if (!user) {
+      router.push('/login');
+    }
+  }, [user, router]);
 
   // Fetch venues from the backend
   const fetchVenues = async () => {
@@ -103,12 +116,12 @@ const AddEvent = () => {
               </div>
 
             </div>
-            <div className="middle33">
+            <div className="Admiddle33">
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">Error: {error}</p>}
                 {success && <p className="success">Event added successfully!</p>}
-                <form onSubmit={handleSubmit} className="AddEventForm">
-                    <div className="form-group">
+                <form onSubmit={handleSubmit} className="AdAddEventForm">
+                    <div className="Adform-group">
                     <label htmlFor="eventName">Event Name:</label>
                     <input
                         type="text"
@@ -118,7 +131,7 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="description">Description:</label>
                     <textarea
                         id="description"
@@ -127,7 +140,7 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="eventDate">Event Date:</label>
                     <input
                         type="date"
@@ -137,7 +150,7 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="startTime">Start Time:</label>
                     <input
                         type="time"
@@ -147,7 +160,7 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="endTime">End Time:</label>
                     <input
                         type="time"
@@ -157,7 +170,7 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="price">Price:</label>
                     <input
                         type="number"
@@ -168,10 +181,10 @@ const AddEvent = () => {
                         required
                     />
                     </div>
-                    <div className="form-group">
+                    <div className="Adform-group">
                     <label htmlFor="venue">Venue:</label>
                     <select
-                        id="venue"
+                        id="venue2"
                         value={venueId}
                         onChange={(e) => setVenueId(e.target.value)}
                         required
@@ -193,7 +206,10 @@ const AddEvent = () => {
           </div>
 
         </div>
-        <Footer />
+        <div className='addEFoot'>
+          <Footer />                
+        </div>
+        
         
   
     </div>

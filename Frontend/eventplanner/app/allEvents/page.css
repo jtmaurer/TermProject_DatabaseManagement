@@ -3,6 +3,7 @@ body {
 }
 
 
+
 .HomePageText {
     text-align: center;
     margin-top: 300px;
@@ -73,6 +74,10 @@ body {
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.allz {
+    background-color: #0f107a;
 }
 
 .textHome h1 {

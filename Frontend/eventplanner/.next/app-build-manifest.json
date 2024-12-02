@@ -5,6 +5,12 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
+    "/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dashboard/page.css",
+      "static/chunks/app/dashboard/page.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -17,35 +23,53 @@
       "static/css/app/login/page.css",
       "static/chunks/app/login/page.js"
     ],
-    "/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/dashboard/page.css",
-      "static/chunks/app/dashboard/page.js"
-    ],
     "/MyEvent/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/MyEvent/page.css",
       "static/chunks/app/MyEvent/page.js"
     ],
-    "/allEvents/page": [
+    "/admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/allEvents/page.css",
-      "static/chunks/app/allEvents/page.js"
+      "static/css/app/admin/page.css",
+      "static/chunks/app/admin/page.js"
     ],
-    "/event/[id]/page": [
+    "/addVenue/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/event/[id]/page.css",
-      "static/chunks/app/event/[id]/page.js"
+      "static/css/app/addVenue/page.css",
+      "static/chunks/app/addVenue/page.js"
+    ],
+    "/addEventAdmin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/addEventAdmin/page.css",
+      "static/chunks/app/addEventAdmin/page.js"
+    ],
+    "/allEventAdmin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/allEventAdmin/page.css",
+      "static/chunks/app/allEventAdmin/page.js"
     ],
     "/signup/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/signup/page.css",
       "static/chunks/app/signup/page.js"
+    ],
+    "/homepage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/homepage/page.css",
+      "static/chunks/app/homepage/page.js"
+    ],
+    "/allEvents/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/allEvents/page.css",
+      "static/chunks/app/allEvents/page.js"
     ]
   }
 }

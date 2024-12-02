@@ -1,23 +1,19 @@
 'use client';
 import './page.css';
 import React, { useEffect, useState, useContext } from 'react';
-import Model from 'react-modal';
 import UsersList from './components/UsersList';
-import AddUser from './components/AddUser';
-import { useRouter } from 'next/navigation';
 import Footer from '../component/components/Footer';
 import Hdr from '../component/Hdr2';
 import { UserContext } from '../UserContext';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
-  const [tickets, setTickets] = useState([]); // User tickets state
-  const [visible, setVisible] = useState(false); // Modal visibility
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
-  const { user } = useContext(UserContext); // User context for authentication
+  const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { user } = useContext(UserContext);
   const router = useRouter();
 
-  // Redirect to login if not logged in
   useEffect(() => {
     if (!user) {
       console.log('Not Logged In');
@@ -25,31 +21,32 @@ const Home = () => {
     }
   }, [user, router]);
 
-  // Fetch tickets for the authenticated user
   const fetchTicketsByUser = async (userId) => {
     try {
       setLoading(true);
+      console.log("Fetching tickets for user:", userId); // Log user ID
       const response = await fetch(`http://localhost:8080/tickets?user_id=${userId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch tickets');
       }
       const data = await response.json();
-      console.log('Fetched tickets:', data);
+      console.log("Fetched tickets:", data); // Log fetched data
       setTickets(data);
-      setError(null);
       console.log(tickets);
+      setError(null);
     } catch (error) {
-      console.error('Error fetching tickets:', error);
+      console.error("Error fetching tickets:", error);
       setError(error.message);
     } finally {
       setLoading(false);
     }
   };
+  
+  
 
-  // Fetch tickets when the component mounts
   useEffect(() => {
     if (user) {
-      fetchTicketsByUser(user.id); // Ensure user ID is passed correctly
+      fetchTicketsByUser(user.id);
     }
   }, [user]);
 
@@ -69,19 +66,10 @@ const Home = () => {
           </div>
 
           <div className="Mymiddle33">
-            <div
-              className={`Myusers-list-container ${
-                tickets.length > 5 ? 'expanded' : ''
-              }`}
-            >
+            <div className={`Myusers-list-container ${tickets.length > 5 ? 'expanded' : ''}`}>
               {loading && <p>Loading tickets...</p>}
               {error && <p>Error: {error}</p>}
-              {!loading && !error && (
-                <UsersList
-                  users={tickets} // Pass the tickets as "users" for rendering
-                  onDelete={(id) => setTickets((prev) => prev.filter((ticket) => ticket.id !== id))}
-                />
-              )}
+              {!loading && !error && <UsersList tickets={tickets} />}
             </div>
           </div>
         </div>

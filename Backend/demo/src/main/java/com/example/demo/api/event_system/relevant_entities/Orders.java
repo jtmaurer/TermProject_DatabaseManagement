@@ -3,7 +3,7 @@ package com.example.demo.api.event_system.relevant_entities;
 import java.sql.Date;
 
 import com.example.demo.api.login_system.User;
-
+import java.sql.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -24,7 +25,8 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private Integer order_id;
+    private Integer order_id; // Primary key
+
 
     @Column(name = "order_date") 
     private Date order_date;
@@ -36,10 +38,14 @@ public class Orders {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user_id;
 
+
+
     @ManyToOne
     @JoinColumn(name = "event_id", referencedColumnName = "event_id")
     private Event event_id;
 
+    @OneToOne(mappedBy = "order") // Match the field name in Payment entity
+    private Payment payment;
     /**
      * Default constructor required for JPA entity instantiation.
      */
