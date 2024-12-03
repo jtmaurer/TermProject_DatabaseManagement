@@ -42,7 +42,7 @@ $ cd Backend/demo
 $ mvn clean spring-boot:run
 
 # Contributions
-Ridhima Reddy: Led the development of the project documentation and README. Designed the prototypes and user interfaces in Figma for the EventHive site. Ran test cases, wrote detailed explanations of the system's functionality, and performed data analysis for system performance. Also ensured the successful integration of the backend with the frontend.
+Ridhima Reddy: Led the development of the project documentation and README. Designed the prototypes and user interfaces in Figma for the EventHive site. Ran test cases, wrote detailed explanations of the system's functionality, and performed data analysis for system performance. 
 
 Curt Leonard: Helped design the schemas for the EventHive project. Assisted in testing the RSVP system and providing post-event feedback features. Ensured proper validation and error handling throughout the system.
 
