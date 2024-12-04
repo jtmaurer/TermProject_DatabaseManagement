@@ -1,0 +1,102 @@
+
+.HOGhero {
+    position: relative;
+    text-align: center;
+    background-color: #f8f8fa;
+  }
+  
+  .HOGhero-image {
+    width: 1800px;
+    height: 850px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+   
+  }
+  
+  .HOGsearch-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: #0f107a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 1500px;
+    height: 100px;
+    
+    
+  }
+  
+  .HOGsearch-bar input {
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+    width: 400px;
+    border: 0;
+    background-color: #f0f1f5;
+  }
+
+ 
+
+  .HOGsearch-bar button{
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 80px;
+    background-color: #7848f4;
+    margin-left: 20px;
+  }
+
+  .HOGsearch-bar img {
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: px;
+    
+  }
+
+  .HOGheroholder {
+    margin-left: auto;
+    display: flex;
+    margin-right: auto;
+  }
+
+  .HOGselecter {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 15px;
+    
+  }
+
+  .HOGselecter2 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 15px;
+    
+  }
+
+  .HOGselecter label {
+    text-align: left;
+    margin-left: 25px;
+    
+  }
+
+  .HOGselecter2 label {
+    text-align: left;
+    margin-left: 5px;
+    
+  }
+
+  .HOGselecter2 input {
+    margin-left: 0px;
+  }
+
+
+  
