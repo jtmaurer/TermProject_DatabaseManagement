@@ -10,8 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
- * Entity class representing a user login in the system.
- * This class is mapped to the "users_login" table in the database and stores user credentials.
+ * Entity representing a user in the system. This class is mapped to the "users"
+ * table in the database.
  */
 @Entity
 @Table(name = "User")
@@ -43,13 +43,13 @@ public class User {
     /**
      * Default constructor required for JPA entity instantiation.
      */
-    public User(){
+    public User() {
     }
 
     /**
      * Parameterized constructor
      */
-    public User(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt, String role, String email){
+    public User(Integer userId, String username, String hashed_password, String salt, LocalDateTime createdAt, String role, String email) {
         this.userId = userId;
         this.username = username;
         this.hashed_password = hashed_password;
@@ -60,7 +60,6 @@ public class User {
     }
 
     // Getters and setters
-
     public Integer getUserId() {
         return userId;
     }
@@ -77,13 +76,14 @@ public class User {
         return salt;
     }
 
-    public String getHashedPassword(){
+    public String getHashedPassword() {
         return this.hashed_password;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
+
     public String getEmail() {
         return email;
     }

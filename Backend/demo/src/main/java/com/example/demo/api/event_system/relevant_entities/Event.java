@@ -13,8 +13,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
- * Entity class representing an event in the system.
- * This class is mapped to the "Event" table in the database.
+ * Entity class representing an event in the system. This class is mapped to the
+ * "Event" table in the database.
  */
 @Entity
 @Table(name = "Event")
@@ -59,8 +59,6 @@ public class Event {
     public Venue getVenue_id() {
         return venue_id;
     }
-
-
 
     public Event(Integer event_id, String event_name, Date event_date, Time start_time, Time end_time, String description, Double price, Boolean online, Venue venue_id) {
         this.event_id = event_id;
@@ -155,19 +153,18 @@ public class Event {
         this.venue_id = venue_id;
     }
 
-
     @Override
     public String toString() {
-        return "Event{" +
-                "event_id=" + event_id +
-                ", event_name='" + event_name + '\'' +
-                ", event_date=" + event_date +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", online=" + online +
-                ", venue_id=" + venue_id +
-                '}';
+        return "Event{"
+                + "event_id=" + event_id
+                + ", event_name='" + event_name + '\''
+                + ", event_date=" + event_date
+                + ", start_time=" + start_time
+                + ", end_time=" + end_time
+                + ", description='" + description + '\''
+                + ", price=" + price
+                + ", online=" + online
+                + ", venue_id=" + venue_id
+                + '}';
     }
 }

@@ -4,7 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Repository defines ORM methods to interact with database.
+ * Repository interface providing ORM methods to interact with the database for
+ * the respective entity.
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -14,5 +15,3 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // Add method to find by email
     User findByEmail(String email);
 }
-
-

@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
- * Entity class representing a venue in the system.
- * This class is mapped to the "Venue" table in the database.
+ * Entity class representing a venue in the system. This class is mapped to the
+ * "Venue" table in the database.
  */
 @Entity
 @Table(name = "Venue")

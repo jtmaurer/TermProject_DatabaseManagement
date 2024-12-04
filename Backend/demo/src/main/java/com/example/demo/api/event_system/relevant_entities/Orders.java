@@ -3,7 +3,7 @@ package com.example.demo.api.event_system.relevant_entities;
 import java.sql.Date;
 
 import com.example.demo.api.login_system.User;
-import java.sql.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,8 +15,8 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 /**
- * Entity class representing a user login in the system.
- * This class is mapped to the "users_login" table in the database and stores user credentials.
+ * Entity representing an order in the event system. This class is mapped to the
+ * "orders" table in the database.
  */
 @Entity
 @Table(name = "Orders")
@@ -27,18 +27,15 @@ public class Orders {
     @Column(name = "order_id")
     private Integer order_id; // Primary key
 
-
-    @Column(name = "order_date") 
+    @Column(name = "order_date")
     private Date order_date;
 
     @Column(name = "number_of_tickets")
     private Integer number_of_tickets;
-    
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user_id;
-
-
 
     @ManyToOne
     @JoinColumn(name = "event_id", referencedColumnName = "event_id")
@@ -46,13 +43,14 @@ public class Orders {
 
     @OneToOne(mappedBy = "order")
     private Payment payment;
+
     /**
      * Default constructor required for JPA entity instantiation.
      */
-    public Orders(){
+    public Orders() {
     }
 
-    public Orders(Integer order_id, Date order_date, Integer number_of_tickets, User user_id, Event event_id){
+    public Orders(Integer order_id, Date order_date, Integer number_of_tickets, User user_id, Event event_id) {
         this.event_id = event_id;
         this.user_id = user_id;
         this.number_of_tickets = number_of_tickets;

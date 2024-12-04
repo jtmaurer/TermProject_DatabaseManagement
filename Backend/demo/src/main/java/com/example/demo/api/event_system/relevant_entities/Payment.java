@@ -1,7 +1,18 @@
 package com.example.demo.api.event_system.relevant_entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
+/**
+ * Entity representing a payment associated with an order. This class is mapped
+ * to the "payment" table in the database.
+ */
 @Entity
 @Table(name = "Payment")
 public class Payment {
@@ -21,10 +32,9 @@ public class Payment {
     @JoinColumn(name = "order_id", referencedColumnName = "order_id")
     private Orders order;
 
-
     // Default constructor
-    public Payment() {}
-
+    public Payment() {
+    }
 
     public Payment(Integer payment_id, String payment_method, Double amount, Orders order) {
         this.payment_id = payment_id;

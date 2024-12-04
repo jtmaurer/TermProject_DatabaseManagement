@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.api.event_system.relevant_entities.Event;
 
+/**
+ * Repository interface providing ORM methods to interact with the database for
+ * the respective entity.
+ */
 @Repository
 public interface EventRepository extends JpaRepository<Event, Integer> {
 
@@ -58,7 +62,7 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
             + "NATURAL JOIN venue "
             + "NATURAL JOIN orders "
             + "NATURAL JOIN ticket "
-        //     + "NATURAL JOIN payment "
+            //     + "NATURAL JOIN payment "
             + "WHERE orders.user_id = :user_id", nativeQuery = true)
     List<Map<String, Object>> findUserOrderDetails(@Param("user_id") int userId);
 

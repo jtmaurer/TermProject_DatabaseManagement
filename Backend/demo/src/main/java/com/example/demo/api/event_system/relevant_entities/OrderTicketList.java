@@ -6,10 +6,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class representing a list of order tickets derived from raw order details.
+ * This organizes tickets into their respective orders.
+ */
 public class OrderTicketList {
 
     List<OrderTicketModel> order_data_list;
 
+    /**
+     * Constructor that initializes the order data list from raw order details.
+     *
+     * @param raw_order_details List of maps containing raw order and ticket
+     * details.
+     */
     public OrderTicketList(List<Map<String, Object>> raw_order_details) {
         order_data_list = new ArrayList<>();
 
@@ -38,7 +48,12 @@ public class OrderTicketList {
         }
     }
 
-    // Helper method to parse ticket data from raw_order_details
+    /**
+     * Parses ticket data from raw order details.
+     *
+     * @param entry Map containing ticket information.
+     * @return Parsed Ticket object.
+     */
     private Ticket parseTicket(Map<String, Object> entry) {
         Ticket ticket = new Ticket();
         ticket.setTicket_id((Integer) entry.get("ticket_id"));
@@ -48,10 +63,18 @@ public class OrderTicketList {
         return ticket;
     }
 
+    /**
+     * Retrieves the list of order data.
+     *
+     * @return List of OrderTicketModel objects.
+     */
     public List<OrderTicketModel> getOrder_data_list() {
         return order_data_list;
     }
 
+    /**
+     * Class representing a single order and its associated tickets.
+     */
     public class OrderTicketModel {
 
         private List<Ticket> tickets;
@@ -62,30 +85,65 @@ public class OrderTicketList {
             tickets = new ArrayList<>();
         }
 
+        /**
+         * Adds a ticket to the order.
+         *
+         * @param ticket Ticket to be added.
+         */
         public void addTicket(Ticket ticket) {
             tickets.add(ticket);
         }
 
+        /**
+         * Sets the ticket list for the order.
+         *
+         * @param tickets List of tickets.
+         */
         public void setTicketList(List<Ticket> tickets) {
             this.tickets = tickets;
         }
 
+        /**
+         * Sets the order data.
+         *
+         * @param order_data Map containing order details.
+         */
         public void setOrder_data(Map<String, Object> order_data) {
             this.order_data = order_data;
         }
 
+        /**
+         * Retrieves the order data.
+         *
+         * @return Map of order details.
+         */
         public Map<String, Object> getOrder_data() {
             return order_data;
         }
 
+        /**
+         * Retrieves the order ID.
+         *
+         * @return Integer representing the order ID.
+         */
         public Integer getOrder_id() {
             return order_id;
         }
 
+        /**
+         * Sets the order ID.
+         *
+         * @param order_id Order ID to set.
+         */
         public void setOrder_id(Integer order_id) {
             this.order_id = order_id;
         }
 
+        /**
+         * Retrieves the list of tickets.
+         *
+         * @return List of Ticket objects.
+         */
         public List<Ticket> getTickets() {
             return tickets;
         }

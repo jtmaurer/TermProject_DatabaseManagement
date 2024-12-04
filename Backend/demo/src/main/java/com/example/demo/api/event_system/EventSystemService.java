@@ -1,21 +1,10 @@
 package com.example.demo.api.event_system;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.springframework.data.repository.query.Param;
-import org.springframework.data.jpa.repository.Query;
 import java.util.stream.Collectors;
-import com.example.demo.api.event_system.relevant_repositories.PaymentRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,22 +13,20 @@ import com.example.demo.api.event_system.relevant_entities.Event;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketList;
 import com.example.demo.api.event_system.relevant_entities.OrderTicketModelSolo;
 import com.example.demo.api.event_system.relevant_entities.Orders;
+import com.example.demo.api.event_system.relevant_entities.Payment;
 import com.example.demo.api.event_system.relevant_entities.Ticket;
 import com.example.demo.api.event_system.relevant_entities.Venue;
-import com.example.demo.api.event_system.relevant_entities.Payment;
 import com.example.demo.api.event_system.relevant_repositories.EventRepository;
 import com.example.demo.api.event_system.relevant_repositories.OrdersRepository;
+import com.example.demo.api.event_system.relevant_repositories.PaymentRepository;
 import com.example.demo.api.event_system.relevant_repositories.TicketRepository;
 import com.example.demo.api.event_system.relevant_repositories.VenueRepository;
 import com.example.demo.api.login_system.User;
 import com.example.demo.api.login_system.UserRepository;
-import java.sql.Date;
-import java.util.Map;
 
 @Service
 public class EventSystemService {
 
-    
     @Autowired
     private VenueRepository venueRepository;
     @Autowired
@@ -53,16 +40,14 @@ public class EventSystemService {
     @Autowired
     private OrdersRepository ordersRepository;
 
-
-
     public EventSystemService() {
 
     }
+
     @Autowired
     public EventSystemService(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
     }
-
 
     public Object getEvents(String location, String date, Double price, Integer user_id, Boolean user_ordered_events) {
         Date sqlDate = date != null ? Date.valueOf(date) : null;
@@ -89,12 +74,6 @@ public class EventSystemService {
         long totalTicketsSold = ticketRepository.countByEventId(id);
         return (int) (venue.getCapacity() - totalTicketsSold);
     }
-
-
-
-
-
-
 
     public Payment getPaymentByOrder(Orders order) {
         // Use the correct repository method
@@ -123,12 +102,6 @@ public class EventSystemService {
         }).collect(Collectors.toList());
     }
 
-
-
-
-
-
-
     // Example usage in another method
     public void createPayment(Orders savedOrder, Double amount, String paymentMethod) {
         Payment payment = new Payment();
@@ -137,8 +110,6 @@ public class EventSystemService {
         payment.setPayment_method(paymentMethod);
         paymentRepository.save(payment);
     }
-
-
 
     public OrderTicketModelSolo createOrder(
             Date order_date,
@@ -197,33 +168,4 @@ public class EventSystemService {
 
         return response;
     }
-
-
-
-
-
-
-    // public void insertVenue() throws IOException {
-    //     String imagePath = "../Venue_Images/columbus_civic_center.jpg";
-    //     System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
-    //     System.out.println("**********************************************************************");
-
-    //     Venue venue = new Venue();
-    //     venue.setVenue_name("Columbus Civic Center");
-    //     venue.set_location("Columbus, GA");
-    //     venue.set_capacity(10600);
-    //     venue.set_venue_id(5);
-
-    //     // Read the image file into a byte array
-    //     byte[] imageBytes = Files.readAllBytes(Path.of(imagePath));
-    //     Byte[] boxedBytes = new Byte[imageBytes.length];
-    //     for (int i = 0; i < imageBytes.length; i++) {
-    //         boxedBytes[i] = imageBytes[i];
-    //     }
-    //     venue.set_image(boxedBytes);
-
-    //     // Save the venue to the database (assuming venueRepository exists)
-    //     venueRepository.save(venue);
-    // }
-
 }

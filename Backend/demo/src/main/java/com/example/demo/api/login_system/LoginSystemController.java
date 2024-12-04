@@ -1,21 +1,19 @@
 package com.example.demo.api.login_system;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import org.springframework.http.HttpStatus;
-
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
- * REST controller for managing login and registration operations. Provides
- * endpoints for user account creation and login functionality.
+ * REST controller for managing user registration and login operations.
  */
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -28,6 +26,12 @@ public class LoginSystemController {
         this.usersLoginService = usersLoginService;
     }
 
+    /**
+     * Registers a new user account.
+     *
+     * @param requestBody Map containing username, password, and email.
+     * @return ResponseEntity with registration result.
+     */
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
     public ResponseEntity<?> createAccount(@RequestBody Map<String, String> requestBody) {
@@ -65,6 +69,12 @@ public class LoginSystemController {
         ));
     }
 
+    /**
+     * Logs in a user.
+     *
+     * @param requestBody Map containing email and password.
+     * @return ResponseEntity with login result.
+     */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> requestBody) {
         String email = requestBody.get("email");
@@ -92,7 +102,12 @@ public class LoginSystemController {
         ));
     }
 
-
+    /**
+     * Retrieves details of a user by email.
+     *
+     * @param email Email of the user to retrieve.
+     * @return ResponseEntity with user details.
+     */
     @GetMapping("/user-details")
     public ResponseEntity<?> getUserDetails(@RequestParam String email) {
         User account = usersLoginService.findByEmail(email);
@@ -105,17 +120,5 @@ public class LoginSystemController {
                 "username", account.getUsername(),
                 "email", account.getEmail()
         ));
-    }
-
-
-
-
-
-
-
-    @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/test")
-    public Long getCount() {
-        return usersLoginService.getCount();
     }
 }
