@@ -1,0 +1,88 @@
+.Allevents {
+    padding: 50px;
+    padding-top: 0;
+    text-align: center;
+  }
+  
+  .Allevent-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .Allevent-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .Allrealz {
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    background-color: none;
+    padding-inline-start: 0;
+ 
+}
+
+.Allformz {
+  background: lightgray;
+  border-radius: 10px;
+  color: black;
+  margin: 0;
+}
+
+.Allrealz ul {
+  padding-inline-start: 0;
+}
+
+  
+  .Alleventsort {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Alleventsort select {
+    margin-left: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: #f0f1f5;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .AllUE {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+
+  }
+
+  .Allpurp {
+   
+    color: #7a4aef;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .Alleventholder {
+    background-color: none;
+    width: 100%;
+    height: 730px;
+    margin-left: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+
+  
+  .Allusers-list-container {
+    max-height: 730px; 
+    overflow-y: auto; 
+    padding: 10px; 
+    border: none;
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+  }
+  

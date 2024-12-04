@@ -1,56 +1,42 @@
-# EventHive - Event Management System
-EventHive is a web-based application designed to make organizing and managing events simple and efficient. It allows users to create events, schedule them, send invites, track RSVPs, and gather post-event feedback. This platform provides a seamless experience for both event organizers and participants, ensuring smooth planning and execution.
+# Steps to Setup and Run Event Planner Project
 
-## Authors
-- Ridhima Reddy
-- Curt Leonard
-- Heeya Jolly
-- Jason Todd Maurer
-- Thomas Nguyen
+## Requirements
 
-## Key Features
-- User Management: Users can create accounts, log in, and manage profiles. Event organizers can create events, while regular users can participate and RSVP.
-- Event Creation and Management: Organizers can create, edit, and delete events, including setting event details like date, time, location, and description.
-- RSVP Tracking: Participants can RSVP to events, and organizers can track attendance.
-- Notifications: Email notifications are sent to participants for event reminders and updates.
-- Post-Event Feedback: Users can provide feedback after attending events, which organizers can view and use to improve future events.
+Node.js, Java, MVN, MySQL Workbench, MySQL Server on port 3306
 
-## Key Goals
-- Streamline event management: Simplify the process of organizing and attending events.
-- Improve organization: Enable participants and organizers to stay on top of events and RSVPs.
-- Increase efficiency: Reduce the need for manual communication by automating event management tasks.
+## Setup and Run Frontend
 
-## Significance
-This project aims to make event planning easier, more organized, and efficient. By offering both organizers and participants a unified platform, EventHIve saves time and effort and ensures a smoother experience for everyone involved.
+### In your terminal, navigate to /Frontend_App/ and enter:
 
-## Prerequisites
-Before you begin, ensure you have the following installed:
-- Java 20 (or the version compatible with your project)
-- Maven (for building and running the backend)
-- A compatible IDE for Java development
-- BASH (for running scripts)
+npm i
 
-## Technologies Used
-- Frontend: HTML, CSS, JavaScript
-- Backend: Java 20
-- Database: MySQL
-- Version Control: Git, GitHub
-- API Layer: RESTful APIs for frontend-backend communication
+### Then enter:
 
-# Compilation: Backend 
-$ cd Backend/demo
-$ mvn clean spring-boot:run
+npm run dev 
 
-# Contributions
-Ridhima Reddy: Led the development of the project documentation and README. Designed the prototypes and user interfaces in Figma for the EventHive site. Ran test cases, wrote detailed explanations of the system's functionality, and performed data analysis for system performance. 
+## Setup and Run Backend API
 
-Curt Leonard: Helped design the schemas for the EventHive project. Assisted in testing the RSVP system and providing post-event feedback features. Ensured proper validation and error handling throughout the system.
+### Open MySQL Workbench and open a new SQL File Terminal, run this SQL Script:
 
-Heeya Jolly: Designed and developed the frontend interface using HTML, CSS, and JavaScript. Focused on creating a user-friendly interface for event creation, RSVP management, and notifications. Ensured the system is responsive and functional across devices.
+CREATE DATABASE event_planner;
 
-Jason Todd Maurer: Contributed to designing the backend logic for handling event creation, user management, and feedback. Implemented core backend functionality, focusing on creating and managing events, user authentication, and RSVP tracking. Developed scripts for testing and ensured smooth communication between the frontend and backend through API integration.
+### In the code base, navigate to this file: 
 
-Thomas Nguyen: Worked on the frontend to implement key event management features such as RSVP tracking, notifications, and event feedback forms. Ensured all frontend components were connected properly to the backend through RESTful APIs and conducted final UI testing.
+\Backend\demo\src\main\resources\application.properties
 
-# Documentation
-For more detailed explanations of the project, key features, implementations, performance testing, and conclusions, refer to the Final Project Documentation.pdf file located in the root directory.
+### And be sure that all of these properties are correct:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/event_planner?useSSL=false&allowPublicKeyRetrieval=true <br>
+spring.datasource.username=root<br>
+spring.datasource.password=password123<br>
+
+### Start a new terminal, and navigate to /Backend/demo/ and enter:
+
+mvn clean install
+
+### Then enter:
+
+mvn clean spring-boot:run
+
+## You are good to go! Open localhost:3000, and create a new admin account to create events, then create a non admin account to buy tickets.
+## Refer to the video on how to do this.
